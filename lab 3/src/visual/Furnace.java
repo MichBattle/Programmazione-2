@@ -39,20 +39,35 @@ public class Furnace{
         return input;
     }
 
+    /**
+     * ritorna l'input della fornace
+     * @return furnace input
+     */
     public SmeltableBlock getInput() {
         return input;
     }
 
+    /**
+     * ritorna l'output della fornace
+     * @return furnace output
+     */
     public Block getOutput() {
         return output;
     }
 
+    /**
+     * imposta l'input della fornace a nullBlock
+     * @return furnace input before null
+     */
     public SmeltableBlock removeInput(){
         SmeltableBlock b = input;
         input = new NullBlock();
         return b;
     }
 
+    /**
+     * resetta la fornace a nullBlocks
+     */
     private void reset_furnace(){
         this.input = new NullBlock();
         this.output = new NullBlock();

@@ -16,7 +16,7 @@ public class Mappa {
      * Inizializza la mappa con il fiume e blocchi di aria
      * @param x, y
      */
-    public Mappa(int x, int y) throws BlockErrorException, WrongCoordinatesException {
+    public Mappa(int x, int y) throws WrongCoordinatesException {
         this.x = x;
         this.y = y;
         map = new AbstractBlock[x][y];
@@ -34,24 +34,10 @@ public class Mappa {
      * @param x
      * @param y
      */
-    public void change_cell(int x, int y) throws BlockErrorException, WrongCoordinatesException {
+    public void change_cell(int x, int y) throws WrongCoordinatesException {
         checkCoords(x, y);
         map[x][y].setContenuto('A');
     }
-
-    /**
-     * Scambia il valore del blocco nelle coordinate inserite con quello del blocco sotto
-     * @param x
-     * @param y
-     */
-//    public void swap(int x, int y) throws BlockErrorException, WrongCoordinatesException {
-//        checkCoords(x, y);
-//        if(checkOnGround(x, y)){ //controlla se il blocco da swappare è gia in terra
-//            char temp = map[x][y].display_in_inventory();
-//            map[x][y].setContenuto(map[x+1][y].display_in_inventory());
-//            map[x+1][y].setContenuto(temp);
-//        }
-//    }
 
     /**
      * Inserisce un blocco nelle coordinate
@@ -60,7 +46,7 @@ public class Mappa {
      * @param x
      * @param y
      */
-    public void insert_at_coords(Block b, int x, int y) throws BlockErrorException, WrongCoordinatesException {
+    public void insert_at_coords(Block b, int x, int y) throws WrongCoordinatesException {
         checkCoords(x, y);
         map[x][y] = b;
         if(b.isFalls_with_gravity())
@@ -68,46 +54,9 @@ public class Mappa {
     }
 
     /**
-     * Fa cadere il blocco fino a quando arriva in terra o fino a quando sotto ha un blocco che non cade
-     * @param x
-     * @param y
-     */
-//    public void cadi(int x, int y, boolean inWater) throws BlockErrorException, WrongCoordinatesException {
-//        checkCoords(x, y);
-//        boolean s = true;
-//        while(checkOnGround(x, y) && map[x+1][y].isFall_through()){ //il blocco cade se non è in terra e se sotto ha un blocco attraversabile
-//            //se cade un oggetto nel blocco d'acqua, il livello non si deve alzare su quella colonna, deve solo sparire il blocco d'acqua, risolvo con l'if
-//            //se inserisco in un blocco d'acqua poi swappa e rimane W-A-S invece che W-W-S, risolvo con inWater
-//            if(map[x][y].display_in_inventory() != 'W' && map[x+1][y].display_in_inventory() == 'W' && s && !inWater){
-//                map[x+1][y] = map[x][y];
-//                map[x][y] = new AirBlock();
-//                s = false;
-//            }else
-//                swap(x, y);
-//
-//            x++;
-//        }
-//    }
-
-    /**
-     * Controlla se il blocco è a terra
-     * @param x
-     * @param y
-     * @return
-     */
-    private boolean checkOnGround(int x, int y){
-        boolean onGround = false;
-
-        if(x + 1 != this.x)
-            onGround = true;
-
-        return onGround;
-    }
-
-    /**
      * inserisce una riga di acqua in cima
      */
-    private void addRowsOfWater() throws BlockErrorException, WrongCoordinatesException {
+    private void addRowsOfWater() throws WrongCoordinatesException {
         for(int i = 0; i < y; i++){
             insert_at_coords(new WaterBlock(), 0, i);
         }
@@ -116,7 +65,7 @@ public class Mappa {
     /**
      * aggiunge 3 righe di acqua
      */
-    public void addSea() throws BlockErrorException, WrongCoordinatesException {
+    public void addSea() throws WrongCoordinatesException {
         for(int i = 0; i < 3; i++){
             addRowsOfWater();
         }
@@ -125,7 +74,7 @@ public class Mappa {
     /**
      * aggiunge una riga di acqua
      */
-    public void addRiver() throws BlockErrorException, WrongCoordinatesException {
+    public void addRiver() throws WrongCoordinatesException {
         addRowsOfWater();
     }
 
@@ -135,7 +84,7 @@ public class Mappa {
      * @param y
      * @return
      */
-    public Block getBlock(int x, int y) throws BlockErrorException, WrongCoordinatesException {
+    public Block getBlock(int x, int y) throws WrongCoordinatesException {
         checkCoords(x, y);
         return map[x][y];
     }
@@ -150,19 +99,38 @@ public class Mappa {
             throw new WrongCoordinatesException("Errore nelle coordinate inserite");
     }
 
-    private boolean isPickable(int x, int y) throws BlockErrorException, WrongCoordinatesException {
+    /**
+     * ritorna se il blocco è raccoglibile
+     * @param x
+     * @param y
+     * @return
+     * @throws BlockErrorException
+     * @throws WrongCoordinatesException
+     */
+    private boolean isPickable(int x, int y) throws WrongCoordinatesException {
         checkCoords(x, y);
         return getBlock(x, y).isPickable();
     }
 
-    public Block gimme_pickable(int x, int y) throws BlockErrorException, WrongCoordinatesException {
+    /**
+     * ritorna un blocco raccoglibile
+     * @param x
+     * @param y
+     * @return pickable block
+     * @throws BlockErrorException
+     * @throws WrongCoordinatesException
+     */
+    public Block gimme_pickable(int x, int y) throws WrongCoordinatesException{
         checkCoords(x, y);
         if(isPickable(x, y))
             return getBlock(x, y);
         else
-            throw new BlockErrorException("Block in coords " + x + " " + y + " is not pickable");
+            throw new WrongCoordinatesException("Block in coords " + x + " " + y + " is not pickable");
     }
 
+    /**
+     * stampa la mappa
+     */
     public void display_map(){
         for(int i = 0; i < x; i++){
             for(int k = 0; k < y; k++){
@@ -173,17 +141,19 @@ public class Mappa {
         System.out.println("\n");
     }
 
-    public int getX() {
-        return x;
-    }
-
+    /**
+     * fa cadere un blocco
+     * @param x
+     * @param y
+     * @throws WrongCoordinatesException
+     */
     public void cadi(int x, int y) throws WrongCoordinatesException {
         int row = x;
         int col = y;
         if (row == this.x - 1){
             return;
         }
-        if(this.map[row+1][col] instanceof TorchBlock && this.map[row][col] instanceof DustBlock)
+        if(this.map[row+1][col] instanceof TorchBlock && this.map[row][col] instanceof DustBlock) //se sotto c'è torch ed è gravel o sabbia si rompe il blocco
             this.map[row][col] = new AirBlock();
         if (!this.map[row][col].isFalls_with_gravity()){
             return;
@@ -198,7 +168,12 @@ public class Mappa {
 
     }
 
-    // precondition: row and col are valid, and so are for the next
+    /**
+     * scambia due blocchi
+     * @param x
+     * @param y
+     * @throws WrongCoordinatesException
+     */
     private void swap(int x, int y) throws WrongCoordinatesException {
         checkCoords(x, y);
         int row = x;

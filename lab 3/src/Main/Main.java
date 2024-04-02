@@ -68,7 +68,7 @@ public class Main {
             m.display_furnace();
             m.display_inventory();
 
-            main1(m);
+            main2(m);
 
         }catch(BlockErrorException | WrongCoordinatesException b){
             System.out.println(b.getMessage());

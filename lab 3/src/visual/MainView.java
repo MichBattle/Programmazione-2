@@ -38,6 +38,9 @@ public class MainView implements CheckIndex {
         System.out.println("\n");
     }
 
+    /**
+     * stampa l'inventario
+     */
     public void display_inventory(){
         System.out.println("INVENTORY:");
         i.display_inventory();
@@ -62,14 +65,30 @@ public class MainView implements CheckIndex {
         i.add_block(f.getInput());
     }
 
-    public void insert(Block b, int x, int y) throws BlockErrorException, WrongCoordinatesException {
+    /**
+     * inserisce un blocco
+     * @param b
+     * @param x
+     * @param y
+     * @throws WrongCoordinatesException
+     */
+    public void insert(Block b, int x, int y) throws WrongCoordinatesException {
         m.insert_at_coords(b, x, y);
     }
 
+    /**
+     * sposta il blocco dalla fornace all'inventario
+     */
     public void move_into_inventory_from_furnace(){
         i.add_block(f.removeInput());
     }
 
+    /**
+     * sposta il blocco dall'inventario alla fornace
+     * @param index
+     * @throws BlockErrorException
+     * @throws WrongCoordinatesException
+     */
     public void move_into_furnace_from_inventory(int index) throws BlockErrorException, WrongCoordinatesException {
         if(f.getInput() instanceof NullBlock){
             if(f.getOutput() instanceof NullBlock){
@@ -81,9 +100,15 @@ public class MainView implements CheckIndex {
             throw new BlockErrorException("MY ERROR: Input of furnace is full");
     }
 
-    public void pick_up_block(int x, int y) throws BlockErrorException, WrongCoordinatesException {
+    /**
+     * raccoglie un blocco
+     * @param x
+     * @param y
+     * @throws WrongCoordinatesException
+     */
+    public void pick_up_block(int x, int y) throws WrongCoordinatesException {
         i.add_block(m.gimme_pickable(x, y));//aggiungo all'inventario
-        m.insert_at_coords(new AirBlock(), x, y);//imposto a nullBlock in map
+        m.insert_at_coords(new AirBlock(), x, y);
         int z = x;
         while(z > 0){
             m.cadi(z-1, y);
@@ -91,10 +116,16 @@ public class MainView implements CheckIndex {
         }
     }
 
+    /**
+     * cambia il comparatore dell'inventario
+     */
     public void change_inventory_comparator(){
         i.change_comparator();
     }
 
+    /**
+     * ordina l'inventario
+     */
     public void sort_inventory(){
         i.sort_inventory();
     }
