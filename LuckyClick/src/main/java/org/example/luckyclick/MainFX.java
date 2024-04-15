@@ -17,6 +17,7 @@ public class MainFX extends Application {
         g.stampaTabellone();
         Scene scene = new Scene(layout, 700, 700);
         stage.setScene(scene);
+        stage.setTitle("Lucky Click!");
         stage.show();
     }
 

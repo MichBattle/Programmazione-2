@@ -3,7 +3,7 @@ package View;
 import Model.Cella;
 import Model.Gioco;
 import Model.celle.CellaBoom;
-import Model.celle.CellaDiv;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
@@ -44,41 +44,46 @@ public class TabPane extends GridPane {
     }
 
     private void setAction(Button b, Cella c, Rectangle r, int row, int col){
-        b.setOnAction(actionEvent -> attivaCella(b, c, r, row, col));
+        b.setOnAction(actionEvent -> {
+            if(g.getTentativi() > 0){
+                if(c.isCoperta()){
+                    g.setTentativi(g.getTentativi() - 1);
+                    attivaCella(b, c, r, row, col);
+                }
+            }
+        });
     }
 
     private void attivaCella(Button b, Cella c, Rectangle r, int row, int col){
-        if(g.getTentativi() > 0){
+        if(g.getTentativi() >= 0){
             if(c.isCoperta()) {
-                if(c instanceof CellaBoom){
+                scopriCella(b, c, r);
+                c.azione();
+                if(c instanceof CellaBoom)
+                    attiva_boom(row, col);
+                else
                     scopriCella(b, c, r);
-                    attiva_azioni(row, col);
-                }else{
-                    scopriCella(b, c, r);
-                    c.azione();
-                }
-
-                g.setTentativi(g.getTentativi() - 1);
             }
         }
         mg.updatePunteggio();
     }
-
 
     private void scopriCella(Button b, Cella c, Rectangle r){
         r.setFill(c.getColore());
         b.setText(c.content());
     }
 
-    public void attiva_azioni(int row, int col){
+    public void attiva_boom(int row, int col){
         Cella[][] matrice = g.getTabellone();
 
         //attivo quelle sulla colonna
         for(int i = 0; i < Gioco.DIM_TABELLONE; i++){
             if(matrice[i][col].isCoperta()) {
                 if (i != row){
-                    matrice[i][col].azione();
-                    //scopro la cella
+                    StackPane sp = getElementAtCoords(this, i, col);
+                    Rectangle r = getRectangle(sp);
+                    Button b = getButton(sp);
+                    attivaCella(b, matrice[i][col], r, i, col);
                 }
             }
         }
@@ -87,10 +92,46 @@ public class TabPane extends GridPane {
         for(int i = 0; i < Gioco.DIM_TABELLONE; i++){
             if(matrice[row][i].isCoperta()){
                 if(i != col){
-                    matrice[row][i].azione();
-                    //scopro la cella
+                    StackPane sp = getElementAtCoords(this, row, i);
+                    Rectangle r = getRectangle(sp);
+                    Button b = getButton(sp);
+
+                    attivaCella(b, matrice[row][i], r, row, i);
                 }
             }
         }
+    }
+
+    private static StackPane getElementAtCoords(GridPane gridPane, int x, int y) {
+        StackPane stackPane = null;
+        for (Node node : gridPane.getChildren()) {
+            if (GridPane.getRowIndex(node) == y && GridPane.getColumnIndex(node) == x && node instanceof StackPane) {
+                stackPane = (StackPane) node;
+                break;
+            }
+        }
+        return stackPane;
+    }
+
+    private static Rectangle getRectangle(StackPane stackPane) {
+        Rectangle rectangle = null;
+        for (Node node : stackPane.getChildren()) {
+            if (node instanceof Rectangle) {
+                rectangle = (Rectangle) node;
+                break;
+            }
+        }
+        return rectangle;
+    }
+
+    private static Button getButton(StackPane stackPane) {
+        Button button = null;
+        for (Node node : stackPane.getChildren()) {
+            if (node instanceof Button) {
+                button = (Button) node;
+                break;
+            }
+        }
+        return button;
     }
 }
