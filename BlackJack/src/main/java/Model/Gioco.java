@@ -20,8 +20,8 @@ public class Gioco {
         m1.ordinaMano();
         m2.ordinaMano();
 
-        g1 = new Giocatore("PIPPO", m1);
-        g2 = new Giocatore("PLUTO", m2);
+        g1 = new Giocatore("PIPPO L'AMICO DI LORIS", m1);
+        g2 = new Giocatore("DAVID DELLA BETTSS", m2);
     }
 
     private Carta daiCarta(){
@@ -57,15 +57,11 @@ public class Gioco {
         current.pescaDallAvversario(k);
     }
 
-    private boolean checkLoose(Giocatore g){
-        return g.getMano().isEmpty();
-    }
-
     public String partita(){
         boolean turno = true;
-        String winner;
+        String winner = "";
 
-        while(!checkLoose(g1) && !checkLoose(g2)){
+        while(!checkLoost()){
             System.out.println(g1);
             System.out.println(g2);
             System.out.println("=== pesco dall'avversario");
@@ -84,19 +80,19 @@ public class Gioco {
             f.pescaDallAvversario(q);
             System.out.println(g1);
             System.out.println(g2);
-            if(checkLoose(q))
+            if(checkLoost())
                 break;
 
             System.out.println("=== rimuovo doppie");
             pescaDalMazzo(f);
-            if(checkLoose(f))
+            if(checkLoost())
                 break;
             System.out.println("=== stampa");
         }
 
-        if(checkLoose(g1))
+        if(g1.getMano().isEmpty())
             winner = g1.getNome() + " HA VINTO\n";
-        else
+        if(g2.getMano().isEmpty())
             winner = g2.getNome() + " HA VINTO\n";
 
         return winner;
