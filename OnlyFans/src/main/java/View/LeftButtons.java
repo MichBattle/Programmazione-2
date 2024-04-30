@@ -23,11 +23,16 @@ public class LeftButtons extends VBox {
 
     private void activate_month_button(){
         prossimoMese.setOnAction(actionEvent -> {
-            mg.update_statsPane(0, 0, 1);
+            mg.update_statsPane(-mg.getSpesa(), 0, 1);
+            mg.resetCircles();
+            mg.impostaCostosi();
         });
     }
 
     private void activate_money_button(){
-        aumentaFondo.setOnAction(actionEvent -> mg.update_statsPane(100, 0,0));
+        aumentaFondo.setOnAction(actionEvent -> {
+            mg.update_statsPane(100, 0,0);
+            mg.impostaCostosi();
+        });
     }
 }
