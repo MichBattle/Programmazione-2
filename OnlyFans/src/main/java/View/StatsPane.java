@@ -18,9 +18,13 @@ public class StatsPane extends HBox {
         spesaText = new Text();
         mesiTrascorsiText = new Text();
 
-        update_all_labels(0, 0,0);
+        update_all_labels(0, 0, 0);
         super.getChildren().addAll(capitaleText, spesaText, mesiTrascorsiText);
         super.setSpacing(5);
+    }
+
+    public Text getMesiTrascorsiText() {
+        return mesiTrascorsiText;
     }
 
     public void update_all_labels(int capitale, int spesaMensile, int mesiTrascorsi){
@@ -35,8 +39,8 @@ public class StatsPane extends HBox {
     }
 
     private void update_label_spesa(int spesaMensile){
-        s.setSpesaMensile(s.getSpesaMensile() + spesaMensile);
-        spesaText.setText("Spesa Mensile: " + s.getSpesaMensile());
+        s.setSpesaMensile(spesaMensile);
+        spesaText.setText("Spesa Mensile: " + spesaMensile);
     }
 
     private void update_label_mesiTrascorsi(int mesiTrascorsi){

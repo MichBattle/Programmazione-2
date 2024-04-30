@@ -27,29 +27,36 @@ public class CenterPane extends VBox {
         fans = new ArrayList<>();
         fans = f.getVentilatori();
 
+        update_center();
+    }
+
+    public void update_center(){
+        super.getChildren().clear();
         for(Ventilatore v : fans){
             HBox hb = crea_cerchio_testo(crea_cerchio(v), crea_testo(v.toString()));
             super.getChildren().add(hb);
         }
+        resetAll();
     }
 
     private StackPane crea_cerchio(Ventilatore v){
         Button b = new Button();
         b.setOpacity(0);
-
         Circle c = new Circle(25.0);
         c.setFill(Color.BLUE);
         c.setStroke(Color.BLACK);
         c.setStrokeWidth(4);
 
-        StackPane sp = new StackPane(c, b);
+        // Imposta le proprietà personalizzate
+        b.setUserData(v);
+        c.setUserData(v);
 
-        setAction(b, c, v, sp);
+        setAction(b, c, v);
 
         b.setMinSize(c.getRadius() * 2, c.getRadius() * 2);
         b.setMaxSize(c.getRadius() * 2, c.getRadius() * 2);
 
-        return sp;
+        return new StackPane(c, b);
     }
 
     private Text crea_testo(String s){
@@ -62,15 +69,14 @@ public class CenterPane extends VBox {
         return hb;
     }
 
-    private void setAction(Button b, Circle c, Ventilatore v, StackPane sp){
+    private void setAction(Button b, Circle c, Ventilatore v){
         b.setOnAction(actionEvent -> {
-            if(!v.isAbbonato()){
-                int spesa = spesaNextMonth + v.getCosto();
-                if(spesa <= mg.getSoldi()){
+            if(!v.isAbbonato()){ //se non è abbonato
+                int spesa = spesaNextMonth + v.getCosto(); //calcolo la spesa che ci sarebbe
+                if(spesa <= mg.getSoldi()){ //se la spesa è minore del capitale
                     spesaNextMonth = spesa;
-                    c.setFill(Color.RED);
-                    v.setAbbonato(true);
-                    impostaCostosi();
+                    c.setFill(Color.RED); //imposto il colore rosso
+                    v.setAbbonato(true); //imposto abbonamento attivo
                 }else{
                     displayAlert();
                 }
@@ -79,6 +85,8 @@ public class CenterPane extends VBox {
                 v.setAbbonato(false);
                 spesaNextMonth -= v.getCosto();
             }
+            impostaCostosi(); //imposto gli abbonamenti non affordable a contorno grigio
+            mg.update_statsPane(0, spesaNextMonth, 0);
         });
     }
 
@@ -90,10 +98,39 @@ public class CenterPane extends VBox {
         win.showAndWait();
     }
 
-    private void impostaCostosi(StackPane sp){
-        for(Node n : sp.getChildren()){
-            if(n instanceof Button){
+    public void impostaCostosi(){
+        for(Node n : super.getChildren()){
+            if(n instanceof HBox hb){ //scorro tra gli HBox
+                for(Node hbNode : hb.getChildren()){
+                    if(hbNode instanceof StackPane sp){ //scorro tra gli StackPane
+                        Circle c = (Circle) sp.getChildren().get(0); // prendo il cerchio
+                        Button b = (Button) sp.getChildren().get(1); // prendo il pulsante
+                        Ventilatore v = (Ventilatore) b.getUserData();
+                        //se non me lo posso permettere e se non è gia stato selezionato lo imposto a GRIGIO
+                        if((spesaNextMonth + v.getCosto()) > mg.getSoldi() && !c.getFill().equals(Color.RED))
+                            c.setStroke(Color.GREY);
+                        else
+                            c.setStroke(Color.BLACK);
+                    }
+                }
+            }
+        }
+    }
 
+    public void resetAll() {
+        for(Node n : super.getChildren()){
+            if(n instanceof HBox hb){
+                for(Node hbChild : hb.getChildren()){
+                    if(hbChild instanceof StackPane sp){
+                        Circle c = (Circle) sp.getChildren().get(0);
+                        Button b = (Button) sp.getChildren().get(1);
+                        Ventilatore v = (Ventilatore) b.getUserData();
+                        c.setStroke(Color.BLACK);
+                        c.setFill(Color.BLUE);
+                        v.setAbbonato(false);
+                        spesaNextMonth = 0;
+                    }
+                }
             }
         }
     }
