@@ -21,6 +21,13 @@ public class LeftButtons extends VBox {
         super.setSpacing(5);
     }
 
+    /**
+     * attiva il bottone del mese
+     * aumenta il mese di 1
+     * toglie la spesa dal fondo
+     * resetta i cerchi
+     * imposta i cerchi troppo costosi a bordo grigio
+     */
     private void activate_month_button(){
         prossimoMese.setOnAction(actionEvent -> {
             mg.update_statsPane(-mg.getSpesa(), 0, 1);
@@ -29,6 +36,11 @@ public class LeftButtons extends VBox {
         });
     }
 
+    /**
+     * attiva il bottone per aumentare il fondo
+     * aumenta di 100 il capitale
+     * imposta i cerchi troppo costosi a bordo grigio
+     */
     private void activate_money_button(){
         aumentaFondo.setOnAction(actionEvent -> {
             mg.update_statsPane(100, 0,0);

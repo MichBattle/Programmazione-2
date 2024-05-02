@@ -25,6 +25,14 @@ public class RightButtons extends VBox {
         super.setSpacing(5);
     }
 
+    /**
+     * imposta l'azione di un bottone
+     * cambia il tipo di sort dell'arraylist di ventilatori
+     * aggiorna il pane dei cerchi
+     * disabilita un bottone e abilita l'altro (disabilita quello appena premuto perche è gia sortato in quel modo e attiva quello per sortare nell'altro modo)
+     * @param b
+     * @param other
+     */
     private void setButtonAction(Button b, Button other){
         b.setOnAction(actionEvent -> {
             mg.changeSort();
@@ -32,8 +40,6 @@ public class RightButtons extends VBox {
 
             b.setDisable(true);
             other.setDisable(false);
-
-            mg.update_statsPane(0, 0, 0);
         });
     }
 }

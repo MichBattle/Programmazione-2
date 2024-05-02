@@ -18,7 +18,7 @@ public class CenterPane extends VBox {
     private ArrayList<Ventilatore> fans;
     private MainGUI mg;
 
-    private int spesaNextMonth;
+    private int spesaNextMonth; //tiene traccia dei costi che verranno applicati il mese prossimo
 
     public CenterPane(MainGUI mg, Fans f) {
         super();
@@ -30,6 +30,11 @@ public class CenterPane extends VBox {
         update_center();
     }
 
+    /**
+     * aggiorna tutto il VBox
+     * crea i cerchi e i testi affianco e li aggiunge al VBox
+     * reimposta tutti i colori ad originali (perche viene chiamato da altri metodi)
+     */
     public void update_center(){
         super.getChildren().clear();
         for(Ventilatore v : fans){
@@ -39,6 +44,12 @@ public class CenterPane extends VBox {
         resetAll();
     }
 
+    /**
+     * crea il cerchio con dentro il bottone
+     * imposto l'azione del bottone
+     * @param v
+     * @return
+     */
     private StackPane crea_cerchio(Ventilatore v){
         Button b = new Button();
         b.setOpacity(0);
@@ -53,22 +64,44 @@ public class CenterPane extends VBox {
 
         setAction(b, c, v);
 
+        //faccio il bottone grande come il cerchio
         b.setMinSize(c.getRadius() * 2, c.getRadius() * 2);
         b.setMaxSize(c.getRadius() * 2, c.getRadius() * 2);
 
         return new StackPane(c, b);
     }
 
+    /**
+     * creo il testo da mettere affianco al cerchio
+     * @param s
+     * @return
+     */
     private Text crea_testo(String s){
         return new Text(s);
     }
 
+    /**
+     * creo l'HBox che contiene cerchio e testo
+     * @param cerchio
+     * @param testo
+     * @return
+     */
     private HBox crea_cerchio_testo(StackPane cerchio, Text testo){
         HBox hb = new HBox();
         hb.getChildren().addAll(cerchio, testo);
         return hb;
     }
 
+    /**
+     * imposta l'azione del bottone
+     * se non sono abbonato al ventilatore e (posso permettermi la spesa aumento il costo per il mese prossimo, metto il colore rosso e attivo l'abbonamento altrimenti attivo un alert)
+     * altrimenti imposto il colore a blu e disattivo l'abbonamento e tolgo i soldi dal costo per il mese prossimo
+     * imposto i ventilatori che non posso permettermi a contorno grigio e quelli che posso a nero
+     * aggiorno lo StatsPane con la spesa per il mese prossimo aggiornata
+     * @param b
+     * @param c
+     * @param v
+     */
     private void setAction(Button b, Circle c, Ventilatore v){
         b.setOnAction(actionEvent -> {
             if(!v.isAbbonato()){ //se non è abbonato
@@ -90,6 +123,9 @@ public class CenterPane extends VBox {
         });
     }
 
+    /**
+     * crea e displaya l'alert
+     */
     private void displayAlert(){
         Alert win = new Alert(Alert.AlertType.INFORMATION);
         win.setTitle("ATTENZIONE!");
@@ -98,6 +134,10 @@ public class CenterPane extends VBox {
         win.showAndWait();
     }
 
+    /**
+     * imposta i ventilatori che non posso permettermi a contorno grigio
+     * imposta i ventilatori che posso permettermi a contorno nero
+     */
     public void impostaCostosi(){
         for(Node n : super.getChildren()){
             if(n instanceof HBox hb){ //scorro tra gli HBox
@@ -117,6 +157,10 @@ public class CenterPane extends VBox {
         }
     }
 
+    /**
+     * reimposta tutti i cerchi ai colori di default
+     * resetta la spesa del prossimo mese a 0
+     */
     public void resetAll() {
         for(Node n : super.getChildren()){
             if(n instanceof HBox hb){
