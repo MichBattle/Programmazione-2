@@ -14,15 +14,12 @@ public class Serie extends Titolo {
         return numStagioni;
     }
 
-    public void calcolaScontoSerie(int nStagioniAcquistate) throws Exception {
+    public void calcolaScontoSerie(int nStagioniAcquistate) {
         double prezzo = super.getPrezzoScontato();
-        if(nStagioniAcquistate < numStagioni && nStagioniAcquistate > 1)
-            prezzo -= prezzo*0.25;
-        else if(nStagioniAcquistate == numStagioni)
+        if(nStagioniAcquistate == numStagioni)
             prezzo -= prezzo*0.5;
-        else
-            throw new Exception("numero stagioni inserite non valido");
-
+        else if(nStagioniAcquistate > 1 && nStagioniAcquistate < numStagioni)
+            prezzo -= prezzo*0.25;
         super.setPrezzoScontato(prezzo);
     }
 }
