@@ -5,6 +5,7 @@ import Controller.Titoli.Film;
 import Controller.Titoli.Serie;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class ArchivioTitoli {
     private ArrayList<Titolo> archivio;
@@ -23,5 +24,19 @@ public class ArchivioTitoli {
 
     public ArrayList<Titolo> getArchivio() {
         return archivio;
+    }
+
+    public void sortByName(){
+        archivio.sort(Comparator.comparing(Titolo :: getNome));
+    }
+
+    public void sortByAnno(){
+        archivio.sort(Comparator.comparingInt(titolo -> Integer.parseInt(titolo.getAnno())));
+    }
+
+    public void sortByType(){
+        archivio.sort(Comparator.comparing(titolo -> titolo instanceof Film)
+                .thenComparing(titolo -> titolo instanceof Anime)
+                .thenComparing(titolo -> titolo instanceof Serie));
     }
 }

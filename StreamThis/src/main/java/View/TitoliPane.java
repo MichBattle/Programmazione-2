@@ -21,19 +21,20 @@ public class TitoliPane extends HBox {
     private int indexBasso;
     private int indexAlto;
     private MainGUI mg;
+    private boolean isScontato;
+    private double keepPrice;
 
     public TitoliPane(MainGUI mg, ArchivioTitoli archivio) {
         super();
         titoli = archivio.getArchivio();
         this.mg = mg;
-        indexBasso = 0;
-        indexAlto = 3;
 
-        for(int i = 0; i < 3; i++){
-            super.getChildren().add(creaStackPane(titoli.get(i)));
-        }
+        resetAll();
     }
 
+    //ARRAYLIST INDEX METHODS-------------------------------------------------------------------------------------------
+
+    /*scorro in avanti o indietro l'arraylist*/
     public void scorri(boolean avanti){
         if(avanti)
             scorriAvanti();
@@ -41,11 +42,29 @@ public class TitoliPane extends HBox {
             scorriDietro();
     }
 
-    /**
-     * trova il colore del rettangolo in base alla classe
-     * @param t
-     * @return
-     */
+    /*scorro in avanti l'indice dell'arrayList*/
+    private void scorriAvanti(){
+        if(aggiornaIndici(true)){
+            super.getChildren().clear();
+            for(int i = indexBasso; i < indexAlto; i++){
+                super.getChildren().add(creaStackPane(titoli.get(i)));
+            }
+        }
+    }
+
+    /*scorro in dietro l'indice dell'arrayList*/
+    private void scorriDietro(){
+        if(aggiornaIndici(false)){
+            super.getChildren().clear();
+            for(int i = indexBasso; i < indexAlto; i++){
+                super.getChildren().add(creaStackPane(titoli.get(i)));
+            }
+        }
+    }
+
+    //CREATE STACKPANE METHODS------------------------------------------------------------------------------------------
+
+    /*trovo il colore in base al tipo di ventilatore*/
     private Color trovaColore(Titolo t){
         if(t instanceof Anime)
             return Color.SALMON;
@@ -56,12 +75,7 @@ public class TitoliPane extends HBox {
         return null;
     }
 
-    /**
-     * aggiorna gli indici per scorrere l'array in avanti e indietro
-     * controlla che non siano < 0 maggionri di 6 in caso lancia un alert
-     * @param avanti
-     * @return
-     */
+    /*aggiorno l'indice per scorrere l'arrayList*/
     private boolean aggiornaIndici(boolean avanti){
         if(avanti){
             if(indexAlto < 7){
@@ -69,7 +83,7 @@ public class TitoliPane extends HBox {
                 indexAlto++;
                 return true;
             }else{
-                displayBoundAlert("non puoi andare avanti");
+                displayAlert("non puoi andare avanti");
                 return false;
             }
         }else{
@@ -78,17 +92,13 @@ public class TitoliPane extends HBox {
                 indexBasso--;
                 return true;
             }else {
-                displayBoundAlert("non puoi andare indietro");
+                displayAlert("non puoi andare indietro");
                 return false;
             }
         }
     }
 
-    /**
-     * crea lo stackPane che contiene rettangolo e bottone
-     * @param t
-     * @return
-     */
+    /*creo stackpane*/
     private StackPane creaStackPane(Titolo t){
         String ultimeDueCifre = t.getAnno().substring(2);
 
@@ -103,68 +113,85 @@ public class TitoliPane extends HBox {
         return sp;
     }
 
+    //BUTTON ACTIONS METHODS--------------------------------------------------------------------------------------------
+
+    /*imposto l'azione dello StackPane (del rettangolo che contiene il film)*/
     private void setAction(StackPane sp, Titolo titolo){
         sp.setOnMouseClicked(actionEvent -> {
             VBox v = new VBox();
+            Button b = new Button("Acquista: " + titolo.getPrezzoScontato() + "€");
             Text t = new Text(titolo.toString());
             v.getChildren().add(t);
 
             if(titolo instanceof Serie){
                 HBox buttons = new HBox();
-                for(int i = 0; i < ((Serie) titolo).getNumStagioni(); i++){
+                int numeroStagioni = ((Serie) titolo).getNumStagioni();
+                for(int i = 0; i < numeroStagioni; i++){
                     Button bu = new Button("S" + (i+1));
-                    setSeasonButtonAction(bu);
+                    setSeasonButtonAction(bu, (Serie)titolo, i+1, b, buttons);
                     buttons.getChildren().add(bu);
                 }
                 v.getChildren().add(buttons);
             }
 
-            Button b = new Button("Acquista: " + titolo.getPrezzoScontato() + "€");
-            b.setOnAction(actionEvent1 -> displayAcquistaAlert());
-
+            b.setOnAction(actionEvent1 -> displayAlert("connessione non presente"));
             v.getChildren().add(b);
 
             mg.setGridCenter(v);
         });
     }
 
-    private void setSeasonButtonAction(Button b){
+    /*imposto l'azione dei bottoni per selezionare le stagioni della serie*/
+    private void setSeasonButtonAction(Button b, Serie s, int numeroStagioni, Button bottoneAcquista, HBox hb){
         b.setOnAction(actionEvent -> {
-
+            if(!isScontato){
+                keepPrice = s.getPrezzoScontato();
+                s.calcolaScontoSerie(numeroStagioni);
+                isScontato = true;
+                disattivaBottoniPrecedenti(numeroStagioni, hb);
+            }else{
+                s.setPrezzoScontato(keepPrice);
+                isScontato = false;
+                attivaBottoniPrecedenti(numeroStagioni, hb);
+            }
+            bottoneAcquista.setText("Acquista: " + s.getPrezzoScontato() + "€");
         });
     }
 
-    private void displayAcquistaAlert(){
-        Alert a = new Alert(Alert.AlertType.INFORMATION);
-        a.setTitle("ATTENZAIONE!");
-        a.setHeaderText("ERRORE");
-        a.setContentText("connessione non presente");
-        a.showAndWait();
-    }
+    //OTHER METHODS-----------------------------------------------------------------------------------------------------
 
-    private void scorriAvanti(){
-        if(aggiornaIndici(true)){
-            super.getChildren().clear();
-            for(int i = indexBasso; i < indexAlto; i++){
-                super.getChildren().add(creaStackPane(titoli.get(i)));
-            }
-        }
-    }
-
-    private void scorriDietro(){
-        if(aggiornaIndici(false)){
-            super.getChildren().clear();
-            for(int i = indexBasso; i < indexAlto; i++){
-                super.getChildren().add(creaStackPane(titoli.get(i)));
-            }
-        }
-    }
-
-    private void displayBoundAlert(String s){
+    /*mostro l'alert quando arrivo in fondo o sono all'inizio con le freccette*/
+    private void displayAlert(String s){
         Alert win = new Alert(Alert.AlertType.INFORMATION);
         win.setTitle("ATTENZIONE!");
         win.setHeaderText("ERRORE");
         win.setContentText(s);
         win.showAndWait();
+    }
+
+    public void resetAll(){
+        indexBasso = 0;
+        indexAlto = 3;
+        isScontato = false;
+
+        super.getChildren().clear();
+        mg.setGridCenter(null);
+        for(int i = 0; i < 3; i++){
+            super.getChildren().add(creaStackPane(titoli.get(i)));
+        }
+    }
+
+    private void disattivaBottoniPrecedenti(int numeroStagioni, HBox hb){
+        for(int i = 0; i < numeroStagioni - 1; i++){
+            if(hb.getChildren().get(i) instanceof Button b)
+                b.setDisable(true);
+        }
+    }
+
+    private void attivaBottoniPrecedenti(int numeroStagioni, HBox hb){
+        for(int i = 0; i < numeroStagioni - 1; i++){
+            if(hb.getChildren().get(i) instanceof Button b)
+                b.setDisable(false);
+        }
     }
 }

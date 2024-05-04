@@ -5,13 +5,17 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 public class MainGUI extends BorderPane {
     private ArchivioTitoli archivio;
     private TitoliPane titoli_pane;
     private ButtonPane bp;
+
     private Button indietro;
     private Button avanti;
+    private Button clear;
+    private RightPane right_pane;
 
     public MainGUI() {
         super();
@@ -20,12 +24,17 @@ public class MainGUI extends BorderPane {
 
         titoli_pane = new TitoliPane(this, archivio);
         bp = new ButtonPane(this);
+        right_pane = new RightPane(this, archivio);
+
         indietro = bp.getBack();
         avanti = bp.getForward();
+        clear = bp.getClear();
 
         HBox hb = new HBox(indietro, titoli_pane, avanti);
 
         super.setTop(hb);
+        super.setLeft(clear);
+        super.setRight(right_pane);
     }
 
     public void scorriFilm(boolean avanti){
@@ -34,5 +43,9 @@ public class MainGUI extends BorderPane {
 
     public void setGridCenter(VBox v) {
         super.setCenter(v);
+    }
+
+    public void resetAll(){
+        titoli_pane.resetAll();
     }
 }
