@@ -4,5 +4,6 @@ module org.example.playthegame {
 
 
     opens org.example.playthegame to javafx.fxml;
-    exports org.example.playthegame;
+    exports Controller;
+    opens Controller to javafx.fxml;
 }
