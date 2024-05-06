@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90554d97-cfd7-4ac1-8df8-9b08f654f0ba" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Palestra/src/main/java/main/Palestra.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Palestra/src/main/java/main/Palestra.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +27,9 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2dSRK7SRicj5CmBOUcmLYPFNEI8" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
