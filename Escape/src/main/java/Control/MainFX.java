@@ -1,8 +1,7 @@
-package controller.escape;
+package Control;
 
 import View.KeyHandler;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 

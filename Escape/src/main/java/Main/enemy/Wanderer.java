@@ -1,9 +1,9 @@
 package Main.enemy;
 
-import Main.Enemy;
 import javafx.scene.paint.Color;
 
-public class Wanderer extends Enemy {
+public class Wanderer extends Striker {
+
     public Wanderer() {
         super(Color.DARKBLUE);
     }

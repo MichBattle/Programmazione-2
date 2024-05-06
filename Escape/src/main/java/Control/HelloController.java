@@ -1,4 +1,4 @@
-package controller.escape;
+package Control;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

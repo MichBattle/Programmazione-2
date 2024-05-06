@@ -4,5 +4,5 @@ module controller.escape {
 
 
     opens controller.escape to javafx.fxml;
-    exports controller.escape;
+    exports Control;
 }
