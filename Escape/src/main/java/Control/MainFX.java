@@ -8,10 +8,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MainFX extends Application {
+    public final static int SCENE_DIMENSION = 500;
+
     @Override
     public void start(Stage stage) throws IOException {
         MainGUI mg = new MainGUI();
-        Scene scene = new Scene(mg, 500, 500);
+        Scene scene = new Scene(mg, SCENE_DIMENSION, SCENE_DIMENSION);
 
         KeyHandler kh = new KeyHandler(scene, mg);
         kh.handleKeyPressed();

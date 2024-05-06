@@ -77,6 +77,10 @@ public class MainGUI extends Pane {
         return u;
     }
 
+    public StatsPane getStatsPane() {
+        return statsPane;
+    }
+
     public void spawnNewEnemy(){
         Random random = new Random();
         Enemy e;
@@ -113,8 +117,43 @@ public class MainGUI extends Pane {
         do{
             spawnX = random.nextDouble(480);
             spawnY = random.nextDouble(480);
-        }while(Math.sqrt(Math.pow(spawnX - u.getCenterX(), 2) + Math.pow(spawnY - u.getCenterY(), 2)) <= u.getRadius());
+        }while(Math.sqrt(Math.pow(spawnX - u.getCenterX(), 2) + Math.pow(spawnY - u.getCenterY(), 2)) <= u.getRadius() + 5);
 
         return new Coordinate(spawnX, spawnY);
+    }
+
+    public void repositionOutOfSceneEntities(){
+        ArrayList<Palla> p = new ArrayList<>();
+        p.add(u);
+        p.addAll(strikers);
+        p.addAll(wanderers);
+        p.addAll(bubblers);
+
+        for(Palla palla : p){
+            if(palla.getCenterX() + palla.getRadius() < 0)
+                palla.setCenterX(MainFX.SCENE_DIMENSION + palla.getRadius());
+            else if(palla.getCenterX() - palla.getRadius() > MainFX.SCENE_DIMENSION)
+                palla.setCenterX(-palla.getRadius());
+
+            if(palla.getCenterY() + palla.getRadius() < 0)
+                palla.setCenterY(MainFX.SCENE_DIMENSION + palla.getRadius());
+            else if(palla.getCenterY() - palla.getRadius() > MainFX.SCENE_DIMENSION)
+                palla.setCenterY(-palla.getRadius());
+        }
+    }
+
+    public Enemy checkLoose(){
+        ArrayList<Enemy> enemies = new ArrayList<>();
+        enemies.addAll(strikers);
+        enemies.addAll(wanderers);
+        enemies.addAll(bubblers);
+
+        for(Enemy nemico : enemies){
+            double distance = Math.sqrt(Math.pow(u.getCenterX() - nemico.getCenterX(), 2) + Math.pow(u.getCenterY() - nemico.getCenterY(), 2));
+            if(distance < u.getRadius() + nemico.getRadius()){
+                return nemico;
+            }
+        }
+        return null;
     }
 }

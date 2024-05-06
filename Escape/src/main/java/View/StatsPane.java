@@ -1,6 +1,5 @@
 package View;
 
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -30,20 +29,13 @@ public class StatsPane extends StackPane {
         super.getChildren().addAll(vbox);
     }
 
-    public int getPunteggio() {
-        return punteggio;
-    }
-
     public boolean isLoose() {
         return loose;
     }
 
     public void aumentaPunteggio() {
         punteggio += 100;
-    }
-
-    public void abbassaPunteggio() {
-        punteggio -= 100;
+        punteggioText.setText("Points: " + punteggio);
     }
 
     public void setLoose(boolean loose) {
