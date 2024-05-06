@@ -29,10 +29,16 @@ public class StatsPane extends StackPane {
         super.getChildren().addAll(vbox);
     }
 
+    /**
+     * serve per il controllo vittoria
+     */
     public boolean isLoose() {
         return loose;
     }
 
+    /**
+     * aumenta il punteggio di 100
+     */
     public void aumentaPunteggio() {
         punteggio += 100;
         punteggioText.setText("Points: " + punteggio);
@@ -42,6 +48,9 @@ public class StatsPane extends StackPane {
         this.loose = loose;
     }
 
+    /**
+     * aggiunge al VBox il testo GAME OVER
+     */
     public void addGameOverText(){
         gameOverText.setText("GAME OVER");
     }

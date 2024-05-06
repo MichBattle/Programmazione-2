@@ -35,6 +35,8 @@ public class MainGUI extends Pane {
 
         Stage stage = new Stage();
         Scene scene = new Scene(statsPane, 200, 100);
+        stage.setTitle("PUNTEGGIO");
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
 
@@ -47,12 +49,27 @@ public class MainGUI extends Pane {
         addEnemy(new Bubbler());
     }
 
+    public Utente getU() {
+        return u;
+    }
+
+    public StatsPane getStatsPane() {
+        return statsPane;
+    }
+
+    /**
+     * fa muovere tutti gli strikers
+     */
     public void moveStrikers() {
         for(Striker s : strikers){
             s.move();
         }
     }
 
+    /**
+     * fa muovere tutti i wanderers
+     * ogni 5 iter fa cambiare la direzione
+     */
     public void moveWanderers() {
         for(Wanderer w : wanderers){
             w.move();
@@ -62,6 +79,11 @@ public class MainGUI extends Pane {
         }
     }
 
+    /**
+     * fa muovere tutti i bubblers
+     * ogni 5 iter fa cambiare la posizione
+     * ogni iter fa aumentare il raggio con 10% di probabilita
+     */
     public void moveBubblers() {
         for(Bubbler b: bubblers){
             b.move();
@@ -73,15 +95,10 @@ public class MainGUI extends Pane {
         }
     }
 
-    public Utente getU() {
-        return u;
-    }
-
-    public StatsPane getStatsPane() {
-        return statsPane;
-    }
-
-    public void spawnNewEnemy(){
+    /**
+     * crea un nemico casuale
+     */
+    public void createNewEnemy(){
         Random random = new Random();
         Enemy e;
 
@@ -94,6 +111,9 @@ public class MainGUI extends Pane {
         addEnemy(e);
     }
 
+    /**
+     * aggiunge un nuovo nemico alla scena
+     */
     private void addEnemy(Enemy e) {
         Coordinate c = createEnemyCoords();
         super.getChildren().add(e);
@@ -109,6 +129,10 @@ public class MainGUI extends Pane {
         e.setCenterY(c.getY());
     }
 
+    /**
+     * crea un oggetto Coordinate che contiene le coordinate dove verrà spawnato un nuovo nemico
+     * le coordinate sono fatte in modo da non collidere con l'user allo spawn
+     */
     private Coordinate createEnemyCoords(){
         Random random = new Random();
         double spawnX;
@@ -122,6 +146,9 @@ public class MainGUI extends Pane {
         return new Coordinate(spawnX, spawnY);
     }
 
+    /**
+     * riposiziona nel lato opposto le entita uscite dalla scena
+     */
     public void repositionOutOfSceneEntities(){
         ArrayList<Palla> p = new ArrayList<>();
         p.add(u);
@@ -142,6 +169,9 @@ public class MainGUI extends Pane {
         }
     }
 
+    /**
+     * ritorna il nemico con cui è avvenuta la collisione
+     */
     public Enemy checkLoose(){
         ArrayList<Enemy> enemies = new ArrayList<>();
         enemies.addAll(strikers);

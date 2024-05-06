@@ -19,6 +19,7 @@ public class MainFX extends Application {
         kh.handleKeyPressed();
 
         stage.setTitle("Escape!");
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }
