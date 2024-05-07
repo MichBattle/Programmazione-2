@@ -60,8 +60,4 @@ public class MainGUI extends VBox {
     public void update_circlePane(){
         cerchi.update_center();
     }
-
-    public int getMesiTrascorsi(){
-        return stats.getMesiTrascorsi();
-    }
 }
