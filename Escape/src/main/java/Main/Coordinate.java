@@ -1,7 +1,5 @@
 package Main;
 
-import Control.MainGUI;
-
 public class Coordinate {
     private double x;
     private double y;
