@@ -1,8 +1,7 @@
 package com.macchinina;
 
-import View.MainGUI;
+import View.KeyHandler;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -13,6 +12,8 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         MainGUI mg = new MainGUI();
         Scene scene = new Scene(mg, 310, 400);
+        KeyHandler kh = new KeyHandler(scene, mg);
+        kh.handleKeysPressed();
         stage.setTitle("MACCHININA!");
         stage.setScene(scene);
         stage.show();

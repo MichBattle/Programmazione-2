@@ -1,17 +1,23 @@
-package View;
+package com.macchinina;
 
+import Main.Coordinate;
+import View.GrigliaPane;
+import View.IndicationButtons;
+import View.SettingsButtons;
 import javafx.scene.layout.AnchorPane;
 
 public class MainGUI extends AnchorPane {
+    private Coordinate coordinateAuto;
     private GrigliaPane grigliaPane;
     private IndicationButtons indicationButtons;
     private SettingsButtons settingsButtons;
 
     public MainGUI() {
         super();
+        coordinateAuto = null;
         indicationButtons = new IndicationButtons();
+        settingsButtons = new SettingsButtons(this);
         grigliaPane = new GrigliaPane(this);
-        settingsButtons = new SettingsButtons();
 
         super.getChildren().addAll(grigliaPane, indicationButtons, settingsButtons);
 
@@ -23,6 +29,14 @@ public class MainGUI extends AnchorPane {
 
         AnchorPane.setBottomAnchor(settingsButtons, 0.0);
         AnchorPane.setRightAnchor(settingsButtons, 0.0);
+    }
+
+    public void setCoordinateAuto(Coordinate coordinateAuto) {
+        this.coordinateAuto = coordinateAuto;
+    }
+
+    public Coordinate getCoordinateAuto() {
+        return coordinateAuto;
     }
 
     public IndicationButtons getIndicationButtons() {

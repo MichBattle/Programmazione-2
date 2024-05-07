@@ -1,4 +1,4 @@
-package View;
+package Main;
 
 public enum Direzioni {
     NORD,

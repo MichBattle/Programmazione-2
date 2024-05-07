@@ -38,11 +38,11 @@ public class IndicationButtons extends BorderPane {
         leftContainer.setAlignment(Pos.CENTER);
         rightContainer.setAlignment(Pos.CENTER);
 
-        setNordAction();
-        setSudAction();
-        setEstAction();
-        setOvestAction();
-        setPratoAction();
+        setButtonAction(nord);
+        setButtonAction(sud);
+        setButtonAction(est);
+        setButtonAction(ovest);
+        setButtonAction(prato);
 
         super.setTop(topContainer);
         super.setBottom(bottomContainer);
@@ -61,53 +61,42 @@ public class IndicationButtons extends BorderPane {
         return a;
     }
 
-    private void setNordAction(){
-        nord.setOnAction(actionEvent -> {
-            nord.setDisable(true);
-            sud.setDisable(false);
-            ovest.setDisable(false);
-            est.setDisable(false);
-            prato.setDisable(false);
+    public Button getNord() {
+        return nord;
+    }
+
+    public Button getSud() {
+        return sud;
+    }
+
+    public Button getEst() {
+        return est;
+    }
+
+    public Button getOvest() {
+        return ovest;
+    }
+
+    public Button getPrato() {
+        return prato;
+    }
+
+    public void disableButton(Button b){
+        for(Button butt : getButtons()){
+            butt.setDisable(false);
+        }
+        b.setDisable(true);
+    }
+
+    private void setButtonAction(Button b){
+        b.setOnAction(actionEvent -> {
+            disableButton(b);
         });
     }
 
-    private void setSudAction(){
-        sud.setOnAction(actionEvent -> {
-            nord.setDisable(false);
-            sud.setDisable(true);
-            ovest.setDisable(false);
-            est.setDisable(false);
-            prato.setDisable(false);
-        });
-    }
-
-    private void setEstAction(){
-        est.setOnAction(actionEvent -> {
-            nord.setDisable(false);
-            sud.setDisable(false);
-            ovest.setDisable(false);
-            est.setDisable(true);
-            prato.setDisable(false);
-        });
-    }
-
-    private void setOvestAction(){
-        ovest.setOnAction(actionEvent -> {
-            nord.setDisable(false);
-            sud.setDisable(false);
-            ovest.setDisable(true);
-            est.setDisable(false);
-            prato.setDisable(false);
-        });
-    }
-
-    private void setPratoAction(){
-        prato.setOnAction(actionEvent -> {
-            nord.setDisable(false);
-            sud.setDisable(false);
-            ovest.setDisable(false);
-            est.setDisable(false);
-            prato.setDisable(true);
-        });
+    public void disattivaBottoni(){
+        for(Button butt : getButtons()){
+            butt.setDisable(false);
+        }
     }
 }

@@ -1,14 +1,41 @@
 package View.Celle.Strade;
 
+import View.Auto;
+import View.Celle.Cella;
+import View.Celle.Prato;
 import View.Celle.Strada;
-import View.Coordinate;
-import View.Direzioni;
+import Main.Coordinate;
+import Main.Direzioni;
 import View.GrigliaPane;
-import View.MainGUI;
+import com.macchinina.MainGUI;
+import javafx.scene.Node;
 
 public class StradaEst extends Strada {
 
     public StradaEst(MainGUI mg, GrigliaPane gp, Coordinate c) {
         super(Direzioni.EST, mg, gp, c);
+    }
+
+    /**
+     * aggiunge un auto orizzontale
+     */
+    @Override
+    public void addAuto() {
+        super.getChildren().add(new Auto(false));
+    }
+
+    /**
+     * muove l'auto nella cella a est
+     */
+    @Override
+    public void muoviAuto() {
+        Coordinate c = super.getC();
+        Node s = super.getGp().getElementAt(c.getY()+1, (c.getX()));
+        if(s instanceof Prato || (c.getY()+1) == 10){
+           super.displayAlert();
+        }else{
+            super.getMg().setCoordinateAuto(new Coordinate(c.getX(), c.getY()+1));
+            ((Strada)s).addAuto();
+        }
     }
 }
