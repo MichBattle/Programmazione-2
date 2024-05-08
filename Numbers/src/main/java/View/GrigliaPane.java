@@ -1,50 +1,58 @@
 package View;
 
-import Controller.MainGUI;
 import View.Celle.CellaEmpty;
 import View.Celle.CellaLaterale;
 import View.Celle.Centrale.CellaBlu;
 import View.Celle.Centrale.CellaGrigia;
 import View.Celle.Laterali.CellaRossa;
 import View.Celle.Laterali.CellaVerde;
+import javafx.application.Platform;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.GridPane;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public class GrigliaPane extends GridPane {
-    public GrigliaPane(MainGUI mg) {
+    private ArrayList<CellaLaterale> celleLaterali;
+
+    public GrigliaPane() {
         super();
-        creaGriglia(mg);
+        celleLaterali = new ArrayList<>();
+        creaGriglia();
+        displayAlert();
     }
 
-    private void creaGriglia(MainGUI mg){
+    private void creaGriglia(){
         Cella c;
-        ArrayList<CellaLaterale> a = new ArrayList<>();
 
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 if(i == 4 && j != 4) {
                     c = new CellaRossa(this, j);
-                    a.add((CellaLaterale) c);
+                    celleLaterali.add((CellaLaterale) c);
                 } else if(j == 4 && i != 4){
                     c = new CellaVerde(this, i);
-                    a.add((CellaLaterale) c);
+                    celleLaterali.add((CellaLaterale) c);
                 } else if(j == 4)
                     c = new CellaEmpty();
                 else {
                     Random r = new Random();
                     if(r.nextBoolean())
-                        c = new CellaGrigia(mg);
+                        c = new CellaGrigia();
                     else
-                        c = new CellaBlu(mg);
+                        c = new CellaBlu();
                 }
                 super.add(c, j, i);
             }
         }
 
-        for(CellaLaterale cella : a){
+        setCelleLateraliNumbers();
+    }
+
+    public void setCelleLateraliNumbers(){
+        for(CellaLaterale cella : celleLaterali){
             cella.impostaNumero();
         }
     }
@@ -75,5 +83,42 @@ public class GrigliaPane extends GridPane {
             }
         }
         return null;
+    }
+
+    public boolean checkDraw(){
+        return checkWin() && checkLoose();
+    }
+
+    public boolean checkWin(){
+        for (int i = 0; i < 3; i++) {
+            if(((Cella)getElementAt(4, i)).getValore() == 10)
+                return true;
+        }
+        return false;
+    }
+
+    public boolean checkLoose(){
+        for (int i = 0; i < 3; i++) {
+            if(((Cella)getElementAt(i, 4)).getValore() == 10)
+                return true;
+        }
+        return false;
+    }
+
+    public void displayAlert(){
+        if(checkDraw())
+            creaAlert("PAREGGIO");
+        else if(checkWin())
+            creaAlert("VITTORIA");
+        else if(checkLoose())
+            creaAlert("SCONFITTA");
+    }
+
+    private void creaAlert(String s){
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setTitle("ATTENZIONE");
+        a.setContentText(s);
+        a.setOnCloseRequest(event -> Platform.exit());
+        a.show();
     }
 }

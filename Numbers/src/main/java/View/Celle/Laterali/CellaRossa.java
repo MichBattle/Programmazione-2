@@ -12,7 +12,10 @@ public class CellaRossa extends CellaLaterale {
 
     @Override
     public void impostaNumero() {
+        if(super.getChildren().getLast() instanceof Text)
+            super.getChildren().removeLast();
         int n = super.getGp().getRowValue(getVal());
+        super.setValore(n);
         super.getChildren().add(new Text(String.valueOf(n)));
     }
 }

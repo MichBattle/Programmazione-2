@@ -10,8 +10,8 @@ public class MainGUI extends AnchorPane {
 
     public MainGUI() {
         super();
-        gp = new GrigliaPane(this);
-        bp = new ButtonPane();
+        gp = new GrigliaPane();
+        bp = new ButtonPane(this);
 
         AnchorPane.setTopAnchor(gp, 0.0);
         AnchorPane.setLeftAnchor(gp, 0.0);
@@ -24,5 +24,9 @@ public class MainGUI extends AnchorPane {
 
     public ButtonPane getBp() {
         return bp;
+    }
+
+    public GrigliaPane getGp() {
+        return gp;
     }
 }
