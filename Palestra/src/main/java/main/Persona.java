@@ -15,7 +15,6 @@ public class Persona {
         if (this.checkAnziano(Integer.parseInt(annoNascita))) {
             this.setPrezzoAbbonamento(this.scontaPrezzo(this.prezzoAbbonamento, 0.35));
         }
-
     }
 
     public String getNome() {
