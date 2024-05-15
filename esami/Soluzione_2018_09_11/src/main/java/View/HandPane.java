@@ -10,22 +10,41 @@ import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 
+/**
+ * La classe HandPane rappresenta il pannello che visualizza la mano di un giocatore.
+ */
 public class HandPane extends HBox {
 
+    /**
+     * Costruttore per la classe HandPane.
+     *
+     * @param giocatoreCorrente La mano del giocatore corrente
+     */
     public HandPane(Mano giocatoreCorrente) {
         super();
 
         creaMano(giocatoreCorrente.getCarte());
     }
 
-    public void creaMano(ArrayList<Carta> mano){
+    /**
+     * Crea la rappresentazione grafica della mano del giocatore.
+     *
+     * @param mano La mano del giocatore
+     */
+    public void creaMano(ArrayList<Carta> mano) {
         getChildren().clear();
-        for(Carta c : mano){
+        for (Carta c : mano) {
             getChildren().add(creaStackPane(c));
         }
     }
 
-    private StackPane creaStackPane(Carta c){
+    /**
+     * Crea un oggetto StackPane per rappresentare una carta.
+     *
+     * @param c La carta da rappresentare
+     * @return Lo StackPane che rappresenta la carta
+     */
+    private StackPane creaStackPane(Carta c) {
         Rectangle r = new Rectangle(40, 40);
         r.setFill(Color.CYAN);
         r.setStroke(Color.BLACK);
