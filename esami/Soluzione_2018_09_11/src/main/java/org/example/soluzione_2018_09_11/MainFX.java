@@ -12,8 +12,8 @@ public class MainFX extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         MainGUI mg = new MainGUI();
-        Scene scene = new Scene(mg, 320, 240);
-        stage.setTitle("Hello!");
+        Scene scene = new Scene(mg, 500, 300);
+        stage.setTitle("BlackJack");
         stage.setScene(scene);
         stage.show();
     }
