@@ -2,44 +2,37 @@ package View;
 
 import Controller.MainGUI;
 import Model.Tessera;
-import Model.Tessere.TesseraP;
-import Model.Tessere.TesseraS;
-import Model.Tessere.TesseraV;
 import javafx.scene.layout.GridPane;
 import org.example.soluzione_2019_01_18.MainFX;
 
-import java.util.ArrayList;
-import java.util.Random;
-
+/**
+ * Rappresenta il pannello della griglia di gioco nella GUI principale del gioco.
+ */
 public class GrigliaPane extends GridPane {
-    private MainGUI mg;
 
+    /**
+     * Costruttore del pannello della griglia di gioco.
+     *
+     * @param mg MainGUI a cui il pannello appartiene.
+     */
     public GrigliaPane(MainGUI mg) {
         super();
-        this.mg = mg;
+        Tessera[][] tessere = mg.getGriglia().getGriglia();
 
-        creaGriglia();
+        creaGriglia(tessere);
     }
 
-    public void creaGriglia(){
-        ArrayList<Tessera> tessere = new ArrayList<>();
-
-        for (int i = 0; i < (MainFX.getLATO()*MainFX.getLATO()) - 2; i++) {
-            tessere.add(new TesseraS(mg));
-        }
-        tessere.add(new TesseraP(mg));
-        tessere.add(new TesseraV(mg));
-        Random r = new Random();
-
+    /**
+     * Crea la griglia di gioco sulla GUI.
+     *
+     * @param grid Griglia di tessere del gioco.
+     */
+    public void creaGriglia(Tessera[][] grid){
+        super.getChildren().clear();
         for (int i = 0; i < MainFX.getLATO(); i++) {
             for (int j = 0; j < MainFX.getLATO(); j++) {
-                int index = r.nextInt(tessere.size());
-                Tessera t = tessere.get(index);
-                tessere.remove(index);
-                super.add(t, j, i);
-                System.out.print(t + " ");
+                super.add(grid[i][j], j, i);
             }
-            System.out.println();
         }
     }
 }
