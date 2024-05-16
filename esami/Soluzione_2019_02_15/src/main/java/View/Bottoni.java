@@ -13,15 +13,24 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+/**
+ * La classe Bottoni fornisce un insieme di pulsanti con azioni associate per manipolare una lista di record.
+ * Questa classe è progettata per essere utilizzata all'interno di un'interfaccia utente JavaFX.
+ */
 public class Bottoni {
     private Button mescola;
     private Button ordina;
     private Button conta;
     private Button ordinaPer;
     private Button aggiungi;
-
     private String soutString;
 
+    /**
+     * Costruisce un nuovo oggetto Bottoni con i pulsanti appropriati in base al tipo di lista.
+     *
+     * @param listaRecordPane Il pannello che contiene la lista di record.
+     * @param isAutoList      Indica se la lista è una lista di automobili (true) o di persone (false).
+     */
     public Bottoni(ListaRecordPane listaRecordPane, boolean isAutoList) {
         mescola = new Button("Mescola");
         ordina = new Button("Ordina");
@@ -44,26 +53,58 @@ public class Bottoni {
         setAggiungiAction(listaRecordPane);
     }
 
+    /**
+     * Restituisce il pulsante "Mescola".
+     *
+     * @return Il pulsante "Mescola".
+     */
     public Button getMescola() {
         return mescola;
     }
 
+    /**
+     * Restituisce il pulsante "Ordina".
+     *
+     * @return Il pulsante "Ordina".
+     */
     public Button getOrdina() {
         return ordina;
     }
 
+    /**
+     * Restituisce il pulsante "Conta".
+     *
+     * @return Il pulsante "Conta".
+     */
     public Button getConta() {
         return conta;
     }
 
+    /**
+     * Restituisce il pulsante "OrdinaPer".
+     *
+     * @return Il pulsante "OrdinaPer".
+     */
     public Button getOrdinaPer() {
         return ordinaPer;
     }
 
+    /**
+     * Restituisce il pulsante "Aggiungi".
+     *
+     * @return Il pulsante "Aggiungi".
+     */
     public Button getAggiungi() {
         return aggiungi;
     }
 
+    // Metodi privati per impostare le azioni dei pulsanti
+
+    /**
+     * Imposta l'azione del pulsante "Mescola".
+     *
+     * @param listaRecordPane Il pannello che contiene la lista di record.
+     */
     private void setMescolaAction(ListaRecordPane listaRecordPane){
         mescola.setOnAction(event -> {
             listaRecordPane.getListaRecord().mescolaLista();
@@ -72,6 +113,11 @@ public class Bottoni {
         });
     }
 
+    /**
+     * Imposta l'azione del pulsante "Ordina".
+     *
+     * @param listaRecordPane Il pannello che contiene la lista di record.
+     */
     private void setOrdinaAction(ListaRecordPane listaRecordPane){
         ordina.setOnAction(event -> {
             listaRecordPane.getListaRecord().ordinaLista();
@@ -80,12 +126,22 @@ public class Bottoni {
         });
     }
 
+    /**
+     * Imposta l'azione del pulsante "Conta".
+     *
+     * @param listaRecordPane Il pannello che contiene la lista di record.
+     */
     private void setContaAction(ListaRecordPane listaRecordPane){
         conta.setOnAction(event -> {
             System.out.println("CI SONO " + listaRecordPane.getListaRecord().size() + soutString);
         });
     }
 
+    /**
+     * Imposta l'azione del pulsante "OrdinaPer".
+     *
+     * @param listaRecordPane Il pannello che contiene la lista di record.
+     */
     private void setOrdinaPerAction(ListaRecordPane listaRecordPane){
         ordinaPer.setOnAction(event -> {
             listaRecordPane.getListaRecord().ordinaListaPerTerzoField();
@@ -94,6 +150,11 @@ public class Bottoni {
         });
     }
 
+    /**
+     * Imposta l'azione del pulsante "Aggiungi".
+     *
+     * @param listaRecordPane Il pannello che contiene la lista di record.
+     */
     private void setAggiungiAction(ListaRecordPane listaRecordPane){
         aggiungi.setOnAction(event -> {
             Stage s = new Stage();
@@ -110,6 +171,18 @@ public class Bottoni {
         });
     }
 
+    // Altri metodi set...Action omessi per brevità...
+
+    /**
+     * Crea la scena per l'inserimento di un nuovo record.
+     *
+     * @param s                 Lo stage su cui visualizzare la scena.
+     * @param field1            Etichetta del primo campo.
+     * @param field2            Etichetta del secondo campo.
+     * @param field3            Etichetta del terzo campo.
+     * @param listaRecordPane   Il pannello che contiene la lista di record.
+     * @return                  La scena creata.
+     */
     private Scene creaScena(Stage s, String field1, String field2, String field3, ListaRecordPane listaRecordPane){
         TextField t1 = new TextField();
         TextField t2 = new TextField();
@@ -137,6 +210,16 @@ public class Bottoni {
         return new Scene(ap, 400, 325);
     }
 
+    /**
+     * Imposta l'azione del pulsante "controlla e inserisci".
+     *
+     * @param s                 Lo stage attuale.
+     * @param b                 Il pulsante "controlla e inserisci".
+     * @param t1                Il campo di testo per il primo valore.
+     * @param t2                Il campo di testo per il secondo valore.
+     * @param t3                Il campo di testo per il terzo valore.
+     * @param listaRecordPane   Il pannello che contiene la lista di record.
+     */
     private void setInserisciAction(Stage s, Button b, TextField t1, TextField t2, TextField t3, ListaRecordPane listaRecordPane){
         b.setOnAction(actionEvent -> {
             //no campi vuoti
@@ -172,6 +255,12 @@ public class Bottoni {
         });
     }
 
+    /**
+     * Restituisce una stringa di aiuto per il messaggio di output.
+     *
+     * @param isAutoList        Indica se la lista è una lista di automobili (true) o di persone (false).
+     * @return                  Una stringa che indica il tipo di lista.
+     */
     private String soutHelper(boolean isAutoList){
         return (isAutoList)? "AUTO" : "PERSONE";
     }
