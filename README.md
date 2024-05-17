@@ -625,6 +625,4 @@ Folder Structure:
 │   │   │   │   ├── utils
 │   │   │   │   ├── solids
 │   │   │   │   ├── interfaces
-├── CIAO
-│   ├── CI
 ```
