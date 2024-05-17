@@ -1,6 +1,6 @@
 # About
 
-This repository's name is: applicazione-fondamenti-matematici-per-informatica.
+This repository's name is: Programmazione-2.
 
 To get started, clone the repository and make some changes.
 
@@ -398,6 +398,7 @@ Folder Structure:
 │   │   │   │   │   ├── Laterali
 │   │   ├── generated-sources
 │   │   │   ├── annotations
+├── Nuova cartella
 ├── OnlyFans
 │   ├── .idea
 │   ├── .mvn
