@@ -1,7 +1,13 @@
-# Nome del progetto
-Questa repository contiene il codice per il progetto XYZ.
+# About
 
-## Struttura delle cartelle
+This repository's name is: applicazione-fondamenti-matematici-per-informatica.
+
+To get started, clone the repository and make some changes.
+
+To invite people to this repo, please contact the organization administrator.
+
+Folder Structure:
+```
 ├── BlackJack
 │   ├── .idea
 │   ├── .mvn
@@ -567,3 +573,4 @@ Questa repository contiene il codice per il progetto XYZ.
 │   │   │   ├── View
 │   │   ├── generated-sources
 │   │   │   ├── annotations
+```
