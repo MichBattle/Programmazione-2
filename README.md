@@ -483,19 +483,29 @@ Folder Structure:
 │       ├── .idea
 │       ├── .mvn
 │       │   └── wrapper
-│       └── src
-│           └── main
-│               ├── java
-│               │   ├── Controller
-│               │   ├── Model
-│               │   ├── View
-│               │   └── org
-│               │       └── example
-│               │           └── soluzione_2019_06_19
-│               └── resources
-│                   └── org
-│                       └── example
-│                           └── soluzione_2019_06_19
+│       ├── src
+│       │   └── main
+│       │       ├── java
+│       │       │   ├── Controller
+│       │       │   ├── Model
+│       │       │   │   └── Persone
+│       │       │   ├── View
+│       │       │   └── org
+│       │       │       └── example
+│       │       │           └── soluzione_2019_06_19
+│       │       └── resources
+│       │           └── org
+│       │               └── example
+│       │                   └── soluzione_2019_06_19
+│       └── target
+│           ├── classes
+│           │   ├── Controller
+│           │   ├── Model
+│           │   └── org
+│           │       └── example
+│           │           └── soluzione_2019_06_19
+│           └── generated-sources
+│               └── annotations
 ├── lab 1
 │   ├── .idea
 │   ├── out

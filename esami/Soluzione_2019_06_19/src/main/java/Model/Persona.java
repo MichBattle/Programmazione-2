@@ -33,7 +33,7 @@ public abstract class Persona {
         }
     }
 
-    //@Override
+    @Override
     public String toString(){
         return cognome + " " + nome + " " + codiceFiscale + " " + annoNascita;
     }
