@@ -83,4 +83,6 @@ public class MainGUI extends Pane {
     public void checkLoose(){
         //controllo collisioni
     }
+
+    //ciao
 }
