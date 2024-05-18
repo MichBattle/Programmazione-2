@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                org.example.soluzione_2019_06_19/org.example.soluzione_2019_06_19.HelloApplication
+                                org.example.soluzione_2019_06_19/org.example.soluzione_2019_06_19.MainFX
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

@@ -1,4 +1,9 @@
 package Controller;
 
-public class MainGUI {
+import javafx.scene.layout.Pane;
+
+public class MainGUI extends Pane {
+    public MainGUI() {
+        super();
+    }
 }
