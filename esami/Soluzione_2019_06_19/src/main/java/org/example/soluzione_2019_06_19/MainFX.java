@@ -10,7 +10,7 @@ public class MainFX extends Application {
     public void start(Stage stage) {
         MainGUI mg = new MainGUI();
         Scene scene = new Scene(mg, 500, 250);
-        stage.setTitle("Hello!");
+        stage.setTitle("Palestra");
         stage.setScene(scene);
         stage.show();
     }
