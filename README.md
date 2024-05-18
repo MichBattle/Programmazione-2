@@ -8,596 +8,650 @@ To invite people to this repo, please contact the organization administrator.
 
 Folder Structure:
 ```
-├── BlackJack
-│   ├── .idea
-│   ├── .mvn
-│   │   └── wrapper
-│   └── src
-│       └── main
-│           ├── java
-│           │   ├── Controller
-│           │   ├── Model
-│           │   └── View
-│           └── resources
-│               └── org
-│                   └── example
-│                       └── blackjack
-├── Concessionario
-│   ├── .idea
-│   ├── .mvn
-│   │   └── wrapper
-│   ├── src
-│   │   └── main
-│   │       ├── java
-│   │       │   ├── controller
-│   │       │   ├── model
-│   │       │   │   └── enums
-│   │       │   └── view
-│   │       └── resources
-│   │           └── controller
-│   └── target
-│       ├── classes
-│       │   ├── controller
-│       │   ├── model
-│       │   │   └── enums
-│       │   └── view
-│       └── generated-sources
-│           └── annotations
-├── Escape
-│   ├── .idea
-│   ├── .mvn
-│   │   └── wrapper
-│   ├── src
-│   │   └── main
-│   │       ├── java
-│   │       │   ├── Control
-│   │       │   ├── Main
-│   │       │   │   └── enemy
-│   │       │   └── View
-│   │       └── resources
-│   │           └── controller
-│   │               └── escape
-│   └── target
-│       ├── classes
-│       │   ├── Control
-│       │   ├── Main
-│       │   │   └── enemy
-│       │   ├── View
-│       │   └── controller
-│       │       └── escape
-│       └── generated-sources
-│           └── annotations
-├── Farmacia
-│   ├── .idea
-│   ├── .mvn
-│   │   └── wrapper
-│   └── src
-│       └── main
-│           ├── java
-│           │   ├── Controller
-│           │   ├── Model
-│           │   └── View
-│           └── resources
-│               └── Controller
-├── GeraltGUI
-│   ├── .idea
-│   ├── .mvn
-│   │   └── wrapper
-│   └── src
-│       └── main
-│           ├── java
-│           │   ├── View
-│           │   ├── model
-│           │   │   ├── geralt
-│           │   │   └── mutations
-│           │   │       ├── abstracts
-│           │   │       └── muts
-│           │   │           ├── combat
-│           │   │           ├── potions
-│           │   │           └── spells
-│           │   └── org
-│           │       └── example
-│           │           └── geraltgui
-│           └── resources
-│               └── org
-│                   └── example
-│                       └── geraltgui
 ├── LuckyClick
-│   ├── .idea
+│   ├── target
+│   │   ├── generated-sources
+│   │   │   ├── annotations
+│   │   ├── classes
+│   │   │   ├── org
+│   │   │   │   ├── example
+│   │   │   │   │   ├── luckyclick
+│   │   │   ├── Model
+│   │   │   │   ├── utils
+│   │   │   │   ├── celle
+│   │   │   ├── View
 │   ├── .mvn
-│   │   └── wrapper
+│   │   ├── wrapper
+│   ├── .idea
 │   ├── src
-│   │   └── main
-│   │       ├── java
-│   │       │   ├── Model
-│   │       │   │   ├── celle
-│   │       │   │   └── utils
-│   │       │   ├── View
-│   │       │   └── org
-│   │       │       └── example
-│   │       │           └── luckyclick
-│   │       └── resources
-│   │           └── org
-│   │               └── example
-│   │                   └── luckyclick
-│   └── target
-│       ├── classes
-│       │   ├── Model
-│       │   │   ├── celle
-│       │   │   └── utils
-│       │   ├── View
-│       │   └── org
-│       │       └── example
-│       │           └── luckyclick
-│       └── generated-sources
-│           └── annotations
-├── Macchinina
-│   ├── .idea
+│   │   ├── main
+│   │   │   ├── resources
+│   │   │   │   ├── org
+│   │   │   │   │   ├── example
+│   │   │   │   │   │   ├── luckyclick
+│   │   │   ├── java
+│   │   │   │   ├── org
+│   │   │   │   │   ├── example
+│   │   │   │   │   │   ├── luckyclick
+│   │   │   │   ├── Model
+│   │   │   │   │   ├── utils
+│   │   │   │   │   ├── celle
+│   │   │   │   ├── View
+├── Escape
+│   ├── target
+│   │   ├── generated-sources
+│   │   │   ├── annotations
+│   │   ├── classes
+│   │   │   ├── controller
+│   │   │   │   ├── escape
+│   │   │   ├── View
+│   │   │   ├── Main
+│   │   │   │   ├── enemy
+│   │   │   ├── Control
 │   ├── .mvn
-│   │   └── wrapper
+│   │   ├── wrapper
+│   ├── .idea
 │   ├── src
-│   │   └── main
-│   │       ├── java
-│   │       │   ├── Main
-│   │       │   ├── View
-│   │       │   │   └── Celle
-│   │       │   │       └── Strade
-│   │       │   └── com
-│   │       │       └── macchinina
-│   │       └── resources
-│   │           └── com
-│   │               └── macchinina
-│   └── target
-│       ├── classes
-│       │   ├── Main
-│       │   ├── View
-│       │   │   └── Celle
-│       │   │       └── Strade
-│       │   └── com
-│       │       └── macchinina
-│       └── generated-sources
-│           └── annotations
-├── Numbers
-│   ├── .idea
-│   ├── .mvn
-│   │   └── wrapper
-│   ├── src
-│   │   └── main
-│   │       ├── java
-│   │       │   ├── Controller
-│   │       │   ├── View
-│   │       │   │   └── Celle
-│   │       │   │       ├── Centrale
-│   │       │   │       └── Laterali
-│   │       │   └── com
-│   │       │       └── numbers
-│   │       └── resources
-│   │           └── com
-│   │               └── numbers
-│   └── target
-│       ├── classes
-│       │   ├── Controller
-│       │   ├── View
-│       │   │   └── Celle
-│       │   │       ├── Centrale
-│       │   │       └── Laterali
-│       │   └── com
-│       │       └── numbers
-│       └── generated-sources
-│           └── annotations
-├── OnlyFans
-│   ├── .idea
-│   ├── .mvn
-│   │   └── wrapper
-│   ├── src
-│   │   └── main
-│   │       ├── java
-│   │       │   ├── Controller
-│   │       │   │   └── Ventilators
-│   │       │   ├── Main
-│   │       │   └── View
-│   │       └── resources
-│   │           └── org
-│   │               └── example
-│   │                   └── onlyfans
-│   └── target
-│       ├── classes
-│       │   ├── Controller
-│       │   │   └── Ventilators
-│       │   ├── Main
-│       │   ├── View
-│       │   └── org
-│       │       └── example
-│       │           └── onlyfans
-│       └── generated-sources
-│           └── annotations
-├── Palestra
-│   ├── .idea
-│   ├── .mvn
-│   │   └── wrapper
-│   └── src
-│       └── main
-│           ├── java
-│           │   ├── controller
-│           │   ├── main
-│           │   └── view
-│           └── resources
-│               └── controller
+│   │   ├── main
+│   │   │   ├── resources
+│   │   │   │   ├── controller
+│   │   │   │   │   ├── escape
+│   │   │   ├── java
+│   │   │   │   ├── View
+│   │   │   │   ├── Main
+│   │   │   │   │   ├── enemy
+│   │   │   │   ├── Control
 ├── Piastrelle
-│   ├── .idea
+│   ├── target
+│   │   ├── generated-sources
+│   │   │   ├── annotations
+│   │   ├── classes
+│   │   │   ├── View
+│   │   │   ├── com
+│   │   │   │   ├── piastrelle
 │   ├── .mvn
-│   │   └── wrapper
-│   └── src
-│       └── main
-│           ├── java
-│           │   ├── View
-│           │   └── com
-│           │       └── piastrelle
-│           └── resources
-│               └── com
-│                   └── piastrelle
-├── PlayTheGame
+│   │   ├── wrapper
 │   ├── .idea
-│   ├── .mvn
-│   │   └── wrapper
 │   ├── src
-│   │   └── main
-│   │       ├── java
-│   │       │   ├── Controller
-│   │       │   ├── Model
-│   │       │   │   └── Tessere
-│   │       │   └── View
-│   │       └── resources
-│   │           └── org
-│   │               └── example
-│   │                   └── playthegame
-│   └── target
-│       ├── classes
-│       │   ├── Controller
-│       │   ├── Model
-│       │   │   └── Tessere
-│       │   ├── View
-│       │   └── org
-│       │       └── example
-│       │           └── playthegame
-│       └── generated-sources
-│           └── annotations
+│   │   ├── main
+│   │   │   ├── resources
+│   │   │   │   ├── com
+│   │   │   │   │   ├── piastrelle
+│   │   │   ├── java
+│   │   │   │   ├── View
+│   │   │   │   ├── Main
+│   │   │   │   ├── com
+│   │   │   │   │   ├── piastrelle
+├── Numbers
+│   ├── target
+│   │   ├── generated-sources
+│   │   │   ├── annotations
+│   │   ├── classes
+│   │   │   ├── Controller
+│   │   │   ├── View
+│   │   │   │   ├── Celle
+│   │   │   │   │   ├── Laterali
+│   │   │   │   │   ├── Centrale
+│   │   │   ├── com
+│   │   │   │   ├── numbers
+│   ├── .mvn
+│   │   ├── wrapper
+│   ├── .idea
+│   ├── src
+│   │   ├── main
+│   │   │   ├── resources
+│   │   │   │   ├── com
+│   │   │   │   │   ├── numbers
+│   │   │   ├── java
+│   │   │   │   ├── Controller
+│   │   │   │   ├── View
+│   │   │   │   │   ├── Celle
+│   │   │   │   │   │   ├── Laterali
+│   │   │   │   │   │   ├── Centrale
+│   │   │   │   ├── Main
+│   │   │   │   ├── com
+│   │   │   │   │   ├── numbers
 ├── Record
-│   ├── .idea
+│   ├── target
+│   │   ├── generated-sources
+│   │   │   ├── annotations
+│   │   ├── classes
+│   │   │   ├── org
+│   │   │   │   ├── example
+│   │   │   │   │   ├── streamthis
+│   │   │   ├── Controller
+│   │   │   │   ├── Records
+│   │   │   ├── View
+│   │   │   ├── Main
 │   ├── .mvn
-│   │   └── wrapper
-│   ├── src
-│   │   └── main
-│   │       ├── java
-│   │       │   ├── Controller
-│   │       │   │   └── Records
-│   │       │   ├── Main
-│   │       │   └── View
-│   │       └── resources
-│   │           └── org
-│   │               └── example
-│   │                   └── streamthis
-│   └── target
-│       ├── classes
-│       │   ├── Controller
-│       │   │   ├── Records
-│       │   │   └── Titoli
-│       │   ├── Main
-│       │   ├── View
-│       │   └── org
-│       │       └── example
-│       │           └── streamthis
-│       └── generated-sources
-│           └── annotations
-├── Run
+│   │   ├── wrapper
 │   ├── .idea
-│   ├── .mvn
-│   │   └── wrapper
 │   ├── src
-│   │   └── main
-│   │       ├── java
-│   │       │   ├── org
-│   │       │   │   └── example
-│   │       │   │       └── run
-│   │       │   └── view
-│   │       │       └── ostacoli
-│   │       └── resources
-│   │           └── org
-│   │               └── example
-│   │                   └── run
-│   └── target
-│       ├── classes
-│       │   ├── org
-│       │   │   └── example
-│       │   │       └── run
-│       │   └── view
-│       │       └── ostacoli
-│       └── generated-sources
-│           └── annotations
-├── StreamThis
+│   │   ├── main
+│   │   │   ├── resources
+│   │   │   │   ├── org
+│   │   │   │   │   ├── example
+│   │   │   │   │   │   ├── streamthis
+│   │   │   ├── java
+│   │   │   │   ├── Controller
+│   │   │   │   │   ├── Records
+│   │   │   │   ├── View
+│   │   │   │   ├── Main
+├── GeraltGUI
+│   ├── target
+│   │   ├── generated-sources
+│   │   │   ├── annotations
+│   │   ├── classes
+│   │   │   ├── org
+│   │   │   │   ├── example
+│   │   │   │   │   ├── geraltgui
+│   │   │   ├── model
+│   │   │   │   ├── mutations
+│   │   │   │   │   ├── abstracts
+│   │   │   │   │   ├── muts
+│   │   │   │   │   │   ├── combat
+│   │   │   │   │   │   ├── potions
+│   │   │   │   │   │   ├── spells
+│   │   │   │   ├── geralt
+│   │   │   ├── View
+│   ├── .mvn
+│   │   ├── wrapper
 │   ├── .idea
-│   ├── .mvn
-│   │   └── wrapper
 │   ├── src
-│   │   └── main
-│   │       ├── java
-│   │       │   ├── Controller
-│   │       │   │   └── Titoli
-│   │       │   ├── Main
-│   │       │   └── View
-│   │       └── resources
-│   │           └── org
-│   │               └── example
-│   │                   └── streamthis
-│   └── target
-│       ├── classes
-│       │   ├── Controller
-│       │   │   └── Titoli
-│       │   ├── Main
-│       │   ├── View
-│       │   └── org
-│       │       └── example
-│       │           └── streamthis
-│       └── generated-sources
-│           └── annotations
-├── Tre
+│   │   ├── main
+│   │   │   ├── resources
+│   │   │   │   ├── org
+│   │   │   │   │   ├── example
+│   │   │   │   │   │   ├── geraltgui
+│   │   │   ├── java
+│   │   │   │   ├── org
+│   │   │   │   │   ├── example
+│   │   │   │   │   │   ├── geraltgui
+│   │   │   │   ├── model
+│   │   │   │   │   ├── mutations
+│   │   │   │   │   │   ├── abstracts
+│   │   │   │   │   │   ├── muts
+│   │   │   │   │   │   │   ├── combat
+│   │   │   │   │   │   │   ├── potions
+│   │   │   │   │   │   │   ├── spells
+│   │   │   │   │   ├── geralt
+│   │   │   │   ├── View
+├── PlayTheGame
+│   ├── target
+│   │   ├── generated-sources
+│   │   │   ├── annotations
+│   │   ├── classes
+│   │   │   ├── org
+│   │   │   │   ├── example
+│   │   │   │   │   ├── playthegame
+│   │   │   ├── Controller
+│   │   │   ├── Model
+│   │   │   │   ├── Tessere
+│   │   │   ├── View
+│   ├── .mvn
+│   │   ├── wrapper
 │   ├── .idea
-│   ├── .mvn
-│   │   └── wrapper
 │   ├── src
-│   │   └── main
-│   │       ├── java
-│   │       │   ├── View
-│   │       │   └── com
-│   │       │       └── tre
-│   │       └── resources
-│   │           └── com
-│   │               └── tre
-│   └── target
-│       ├── classes
-│       │   ├── View
-│       │   └── com
-│       │       └── tre
-│       └── generated-sources
-│           └── annotations
-├── esami
-│   ├── Soluzione_2018_06_15
-│   │   ├── .idea
-│   │   ├── .mvn
-│   │   │   └── wrapper
-│   │   ├── src
-│   │   │   └── main
-│   │   │       ├── java
-│   │   │       │   ├── Controller
-│   │   │       │   ├── Model
-│   │   │       │   │   └── Celle
-│   │   │       │   ├── View
-│   │   │       │   └── org
-│   │   │       │       └── example
-│   │   │       │           └── soluzione_2018_06_15
-│   │   │       └── resources
-│   │   │           └── org
-│   │   │               └── example
-│   │   │                   └── soluzione_2018_06_15
-│   │   └── target
-│   │       ├── classes
-│   │       │   ├── Controller
-│   │       │   ├── Model
-│   │       │   │   └── Celle
-│   │       │   ├── View
-│   │       │   └── org
-│   │       │       └── example
-│   │       │           └── soluzione_2018_06_15
-│   │       └── generated-sources
-│   │           └── annotations
-│   ├── Soluzione_2018_07_05
-│   │   ├── .idea
-│   │   ├── .mvn
-│   │   │   └── wrapper
-│   │   └── src
-│   │       └── main
-│   │           ├── java
-│   │           │   ├── Controller
-│   │           │   ├── Model
-│   │           │   │   ├── Autos
-│   │           │   │   └── Enums
-│   │           │   ├── View
-│   │           │   └── com
-│   │           │       └── soluzione_2018_07_05
-│   │           └── resources
-│   │               └── com
-│   │                   └── soluzione_2018_07_05
-│   ├── Soluzione_2018_09_11
-│   │   ├── .idea
-│   │   ├── .mvn
-│   │   │   └── wrapper
-│   │   ├── src
-│   │   │   └── main
-│   │   │       ├── java
-│   │   │       │   ├── Controller
-│   │   │       │   ├── Model
-│   │   │       │   ├── View
-│   │   │       │   └── org
-│   │   │       │       └── example
-│   │   │       │           └── soluzione_2018_09_11
-│   │   │       └── resources
-│   │   │           └── org
-│   │   │               └── example
-│   │   │                   └── soluzione_2018_09_11
-│   │   └── target
-│   │       ├── classes
-│   │       │   ├── Controller
-│   │       │   ├── Model
-│   │       │   ├── View
-│   │       │   └── org
-│   │       │       └── example
-│   │       │           └── soluzione_2018_09_11
-│   │       └── generated-sources
-│   │           └── annotations
-│   ├── Soluzione_2019_01_18
-│   │   ├── .idea
-│   │   ├── .mvn
-│   │   │   └── wrapper
-│   │   ├── src
-│   │   │   └── main
-│   │   │       ├── java
-│   │   │       │   ├── Controller
-│   │   │       │   ├── Model
-│   │   │       │   │   └── Tessere
-│   │   │       │   ├── View
-│   │   │       │   └── org
-│   │   │       │       └── example
-│   │   │       │           └── soluzione_2019_01_18
-│   │   │       └── resources
-│   │   │           └── org
-│   │   │               └── example
-│   │   │                   └── soluzione_2019_01_18
-│   │   └── target
-│   │       ├── classes
-│   │       │   ├── Controller
-│   │       │   ├── Model
-│   │       │   │   └── Tessere
-│   │       │   ├── View
-│   │       │   └── org
-│   │       │       └── example
-│   │       │           └── soluzione_2019_01_18
-│   │       └── generated-sources
-│   │           └── annotations
-│   ├── Soluzione_2019_02_15
-│   │   ├── .idea
-│   │   ├── .mvn
-│   │   │   └── wrapper
-│   │   └── src
-│   │       └── main
-│   │           ├── java
-│   │           │   ├── Controller
-│   │           │   ├── Model
-│   │           │   │   └── Records
-│   │           │   ├── View
-│   │           │   └── com
-│   │           │       └── soluzione_2019_02_15
-│   │           └── resources
-│   │               └── com
-│   │                   └── soluzione_2019_02_15
-│   └── Soluzione_2019_06_19
-│       ├── .idea
-│       ├── .mvn
-│       │   └── wrapper
-│       ├── src
-│       │   └── main
-│       │       ├── java
-│       │       │   ├── Controller
-│       │       │   ├── Model
-│       │       │   │   └── Persone
-│       │       │   ├── View
-│       │       │   └── org
-│       │       │       └── example
-│       │       │           └── soluzione_2019_06_19
-│       │       └── resources
-│       │           └── org
-│       │               └── example
-│       │                   └── soluzione_2019_06_19
-│       └── target
-│           ├── classes
-│           │   ├── Controller
-│           │   ├── Model
-│           │   └── org
-│           │       └── example
-│           │           └── soluzione_2019_06_19
-│           └── generated-sources
-│               └── annotations
+│   │   ├── main
+│   │   │   ├── resources
+│   │   │   │   ├── org
+│   │   │   │   │   ├── example
+│   │   │   │   │   │   ├── playthegame
+│   │   │   ├── java
+│   │   │   │   ├── Controller
+│   │   │   │   ├── Model
+│   │   │   │   │   ├── Tessere
+│   │   │   │   ├── View
 ├── lab 1
-│   ├── .idea
 │   ├── out
-│   │   └── production
-│   │       └── Lab1
-│   │           ├── Main
-│   │           └── data
-│   └── src
-│       ├── Main
-│       └── data
+│   │   ├── production
+│   │   │   ├── Lab1
+│   │   │   │   ├── Main
+│   │   │   │   ├── data
+│   ├── .idea
+│   ├── src
+│   │   ├── Main
+│   │   ├── data
+├── Macchinina
+│   ├── target
+│   │   ├── generated-sources
+│   │   │   ├── annotations
+│   │   ├── classes
+│   │   │   ├── View
+│   │   │   │   ├── Celle
+│   │   │   │   │   ├── Strade
+│   │   │   ├── Main
+│   │   │   ├── com
+│   │   │   │   ├── macchinina
+│   ├── .mvn
+│   │   ├── wrapper
+│   ├── .idea
+│   ├── src
+│   │   ├── main
+│   │   │   ├── resources
+│   │   │   │   ├── com
+│   │   │   │   │   ├── macchinina
+│   │   │   ├── java
+│   │   │   │   ├── View
+│   │   │   │   │   ├── Celle
+│   │   │   │   │   │   ├── Strade
+│   │   │   │   ├── Main
+│   │   │   │   ├── com
+│   │   │   │   │   ├── macchinina
+├── BlackJack
+│   ├── target
+│   │   ├── generated-sources
+│   │   │   ├── annotations
+│   │   ├── classes
+│   │   │   ├── org
+│   │   │   │   ├── example
+│   │   │   │   │   ├── blackjack
+│   │   │   ├── Controller
+│   │   │   ├── Model
+│   │   │   ├── View
+│   ├── .mvn
+│   │   ├── wrapper
+│   ├── .idea
+│   ├── src
+│   │   ├── main
+│   │   │   ├── resources
+│   │   │   │   ├── org
+│   │   │   │   │   ├── example
+│   │   │   │   │   │   ├── blackjack
+│   │   │   ├── java
+│   │   │   │   ├── Controller
+│   │   │   │   ├── Model
+│   │   │   │   ├── View
+├── lab4
+│   ├── Lab1
+│   │   ├── .idea
+│   ├── out
+│   │   ├── production
+│   │   │   ├── Lab1
+│   │   │   │   ├── Main
+│   │   │   │   ├── data
+│   │   │   ├── lab 2
+│   │   │   │   ├── utils
+│   │   │   │   ├── visual
+│   │   │   │   │   ├── textual
+│   │   │   │   │   ├── GUI
+│   │   │   │   ├── Main
+│   │   │   │   ├── data
+│   │   │   │   │   ├── blocks
+│   │   │   │   │   │   ├── utils
+│   │   │   │   │   │   ├── solids
+│   │   │   │   │   │   ├── interfaces
+│   ├── .idea
+│   │   ├── libraries
+│   ├── src
+│   │   ├── utils
+│   │   ├── visual
+│   │   │   ├── textual
+│   │   │   ├── GUI
+│   │   ├── Main
+│   │   ├── data
+│   │   │   ├── blocks
+│   │   │   │   ├── utils
+│   │   │   │   ├── solids
+│   │   │   │   ├── interfaces
+├── StreamThis
+│   ├── target
+│   │   ├── generated-sources
+│   │   │   ├── annotations
+│   │   ├── classes
+│   │   │   ├── org
+│   │   │   │   ├── example
+│   │   │   │   │   ├── streamthis
+│   │   │   ├── Controller
+│   │   │   │   ├── Titoli
+│   │   │   ├── View
+│   │   │   ├── Main
+│   ├── .mvn
+│   │   ├── wrapper
+│   ├── .idea
+│   ├── src
+│   │   ├── main
+│   │   │   ├── resources
+│   │   │   │   ├── org
+│   │   │   │   │   ├── example
+│   │   │   │   │   │   ├── streamthis
+│   │   │   ├── java
+│   │   │   │   ├── Controller
+│   │   │   │   │   ├── Titoli
+│   │   │   │   ├── View
+│   │   │   │   ├── Main
+├── OnlyFans
+│   ├── target
+│   │   ├── generated-sources
+│   │   │   ├── annotations
+│   │   ├── classes
+│   │   │   ├── org
+│   │   │   │   ├── example
+│   │   │   │   │   ├── onlyfans
+│   │   │   ├── Controller
+│   │   │   │   ├── Ventilators
+│   │   │   ├── View
+│   │   │   ├── Main
+│   ├── .mvn
+│   │   ├── wrapper
+│   ├── .idea
+│   ├── src
+│   │   ├── main
+│   │   │   ├── resources
+│   │   │   │   ├── org
+│   │   │   │   │   ├── example
+│   │   │   │   │   │   ├── onlyfans
+│   │   │   ├── java
+│   │   │   │   ├── Controller
+│   │   │   │   │   ├── Ventilators
+│   │   │   │   ├── View
+│   │   │   │   ├── Main
+├── Farmacia
+│   ├── target
+│   │   ├── generated-sources
+│   │   │   ├── annotations
+│   │   ├── classes
+│   │   │   ├── Controller
+│   │   │   ├── Model
+│   │   │   ├── View
+│   ├── .mvn
+│   │   ├── wrapper
+│   ├── .idea
+│   ├── src
+│   │   ├── main
+│   │   │   ├── resources
+│   │   │   │   ├── org
+│   │   │   │   │   ├── example
+│   │   │   │   ├── Controller
+│   │   │   ├── java
+│   │   │   │   ├── Controller
+│   │   │   │   ├── Model
+│   │   │   │   ├── View
+├── Palestra
+│   ├── target
+│   │   ├── generated-sources
+│   │   │   ├── annotations
+│   │   ├── classes
+│   │   │   ├── controller
+│   │   │   ├── view
+│   │   │   ├── main
+│   ├── .mvn
+│   │   ├── wrapper
+│   ├── .idea
+│   ├── src
+│   │   ├── main
+│   │   │   ├── resources
+│   │   │   │   ├── controller
+│   │   │   ├── java
+│   │   │   │   ├── controller
+│   │   │   │   ├── view
+│   │   │   │   ├── main
+├── Tre
+│   ├── target
+│   │   ├── generated-sources
+│   │   │   ├── annotations
+│   │   ├── classes
+│   │   │   ├── View
+│   │   │   ├── com
+│   │   │   │   ├── tre
+│   ├── .mvn
+│   │   ├── wrapper
+│   ├── .idea
+│   ├── src
+│   │   ├── main
+│   │   │   ├── resources
+│   │   │   │   ├── com
+│   │   │   │   │   ├── tre
+│   │   │   ├── java
+│   │   │   │   ├── View
+│   │   │   │   ├── com
+│   │   │   │   │   ├── tre
+├── Run
+│   ├── target
+│   │   ├── generated-sources
+│   │   │   ├── annotations
+│   │   ├── classes
+│   │   │   ├── org
+│   │   │   │   ├── example
+│   │   │   │   │   ├── run
+│   │   │   ├── view
+│   │   │   │   ├── ostacoli
+│   ├── .mvn
+│   │   ├── wrapper
+│   ├── .idea
+│   ├── src
+│   │   ├── main
+│   │   │   ├── resources
+│   │   │   │   ├── org
+│   │   │   │   │   ├── example
+│   │   │   │   │   │   ├── run
+│   │   │   ├── java
+│   │   │   │   ├── org
+│   │   │   │   │   ├── example
+│   │   │   │   │   │   ├── run
+│   │   │   │   ├── model
+│   │   │   │   ├── view
+│   │   │   │   │   ├── ostacoli
+├── esami
+│   ├── Soluzione_2019_02_15
+│   │   ├── target
+│   │   │   ├── generated-sources
+│   │   │   │   ├── annotations
+│   │   │   ├── classes
+│   │   │   │   ├── Controller
+│   │   │   │   ├── Model
+│   │   │   │   │   ├── Records
+│   │   │   │   ├── View
+│   │   │   │   ├── com
+│   │   │   │   │   ├── soluzione_2019_02_15
+│   │   ├── .mvn
+│   │   │   ├── wrapper
+│   │   ├── .idea
+│   │   ├── src
+│   │   │   ├── main
+│   │   │   │   ├── resources
+│   │   │   │   │   ├── com
+│   │   │   │   │   │   ├── soluzione_2019_02_15
+│   │   │   │   ├── java
+│   │   │   │   │   ├── Controller
+│   │   │   │   │   ├── Model
+│   │   │   │   │   │   ├── Records
+│   │   │   │   │   ├── View
+│   │   │   │   │   ├── com
+│   │   │   │   │   │   ├── soluzione_2019_02_15
+│   ├── Soluzione_2019_01_18
+│   │   ├── .mvn
+│   │   │   ├── wrapper
+│   │   ├── .idea
+│   │   ├── src
+│   │   │   ├── main
+│   │   │   │   ├── resources
+│   │   │   │   │   ├── org
+│   │   │   │   │   │   ├── example
+│   │   │   │   │   │   │   ├── soluzione_2019_01_18
+│   │   │   │   ├── java
+│   │   │   │   │   ├── org
+│   │   │   │   │   │   ├── example
+│   │   │   │   │   │   │   ├── soluzione_2019_01_18
+│   │   │   │   │   ├── Controller
+│   │   │   │   │   ├── Model
+│   │   │   │   │   │   ├── Tessere
+│   │   │   │   │   ├── View
+│   ├── Soluzione_2018_06_15
+│   │   ├── .mvn
+│   │   │   ├── wrapper
+│   │   ├── .idea
+│   │   ├── src
+│   │   │   ├── main
+│   │   │   │   ├── resources
+│   │   │   │   │   ├── org
+│   │   │   │   │   │   ├── example
+│   │   │   │   │   │   │   ├── soluzione_2018_06_15
+│   │   │   │   ├── java
+│   │   │   │   │   ├── org
+│   │   │   │   │   │   ├── example
+│   │   │   │   │   │   │   ├── soluzione_2018_06_15
+│   │   │   │   │   ├── Controller
+│   │   │   │   │   ├── Model
+│   │   │   │   │   │   ├── Celle
+│   │   │   │   │   ├── View
+│   ├── Soluzione_2018_09_11
+│   │   ├── target
+│   │   │   ├── generated-sources
+│   │   │   │   ├── annotations
+│   │   │   ├── classes
+│   │   │   │   ├── org
+│   │   │   │   │   ├── example
+│   │   │   │   │   │   ├── soluzione_2018_09_11
+│   │   │   │   ├── Controller
+│   │   │   │   ├── Model
+│   │   │   │   ├── View
+│   │   ├── .mvn
+│   │   │   ├── wrapper
+│   │   ├── .idea
+│   │   ├── src
+│   │   │   ├── main
+│   │   │   │   ├── resources
+│   │   │   │   │   ├── org
+│   │   │   │   │   │   ├── example
+│   │   │   │   │   │   │   ├── soluzione_2018_09_11
+│   │   │   │   ├── java
+│   │   │   │   │   ├── org
+│   │   │   │   │   │   ├── example
+│   │   │   │   │   │   │   ├── soluzione_2018_09_11
+│   │   │   │   │   ├── Controller
+│   │   │   │   │   ├── Model
+│   │   │   │   │   ├── View
+│   ├── Soluzione_2018_07_05
+│   │   ├── target
+│   │   │   ├── generated-sources
+│   │   │   │   ├── annotations
+│   │   │   ├── classes
+│   │   │   │   ├── Controller
+│   │   │   │   ├── Model
+│   │   │   │   │   ├── Enums
+│   │   │   │   │   ├── Autos
+│   │   │   │   ├── View
+│   │   │   │   ├── com
+│   │   │   │   │   ├── soluzione_2018_07_05
+│   │   ├── .mvn
+│   │   │   ├── wrapper
+│   │   ├── .idea
+│   │   ├── src
+│   │   │   ├── main
+│   │   │   │   ├── resources
+│   │   │   │   │   ├── com
+│   │   │   │   │   │   ├── soluzione_2018_07_05
+│   │   │   │   ├── java
+│   │   │   │   │   ├── Controller
+│   │   │   │   │   ├── Model
+│   │   │   │   │   │   ├── Enums
+│   │   │   │   │   │   ├── Autos
+│   │   │   │   │   ├── View
+│   │   │   │   │   ├── com
+│   │   │   │   │   │   ├── soluzione_2018_07_05
+│   ├── Soluzione_2019_06_19
+│   │   ├── target
+│   │   │   ├── generated-sources
+│   │   │   │   ├── annotations
+│   │   │   ├── classes
+│   │   │   │   ├── org
+│   │   │   │   │   ├── example
+│   │   │   │   │   │   ├── soluzione_2019_06_19
+│   │   │   │   ├── Controller
+│   │   │   │   ├── Model
+│   │   │   │   │   ├── Persone
+│   │   │   │   ├── View
+│   │   ├── .mvn
+│   │   │   ├── wrapper
+│   │   ├── .idea
+│   │   ├── src
+│   │   │   ├── main
+│   │   │   │   ├── resources
+│   │   │   │   │   ├── org
+│   │   │   │   │   │   ├── example
+│   │   │   │   │   │   │   ├── soluzione_2019_06_19
+│   │   │   │   ├── java
+│   │   │   │   │   ├── org
+│   │   │   │   │   │   ├── example
+│   │   │   │   │   │   │   ├── soluzione_2019_06_19
+│   │   │   │   │   ├── Controller
+│   │   │   │   │   ├── Model
+│   │   │   │   │   │   ├── Persone
+│   │   │   │   │   ├── View
+├── Concessionario
+│   ├── target
+│   │   ├── generated-sources
+│   │   │   ├── annotations
+│   │   ├── classes
+│   │   │   ├── controller
+│   │   │   ├── model
+│   │   │   │   ├── enums
+│   │   │   ├── view
+│   ├── .mvn
+│   │   ├── wrapper
+│   ├── .idea
+│   ├── src
+│   │   ├── main
+│   │   │   ├── resources
+│   │   │   │   ├── org
+│   │   │   │   │   ├── example
+│   │   │   │   ├── controller
+│   │   │   ├── java
+│   │   │   │   ├── controller
+│   │   │   │   ├── model
+│   │   │   │   │   ├── enums
+│   │   │   │   ├── view
 ├── lab 2
-│   ├── .idea
 │   ├── Lab1
-│   │   └── .idea
+│   │   ├── .idea
 │   ├── out
-│   │   └── production
-│   │       ├── Lab1
-│   │       │   ├── Main
-│   │       │   └── data
-│   │       └── lab 2
-│   │           ├── Main
-│   │           ├── data
-│   │           │   └── blocks
-│   │           │       ├── interfaces
-│   │           │       └── solids
-│   │           ├── utils
-│   │           └── visual
-│   └── src
-│       ├── Main
-│       ├── data
-│       │   └── blocks
-│       │       ├── interfaces
-│       │       └── solids
-│       ├── utils
-│       └── visual
+│   │   ├── production
+│   │   │   ├── Lab1
+│   │   │   │   ├── Main
+│   │   │   │   ├── data
+│   │   │   ├── lab 2
+│   │   │   │   ├── utils
+│   │   │   │   ├── visual
+│   │   │   │   ├── Main
+│   │   │   │   ├── data
+│   │   │   │   │   ├── blocks
+│   │   │   │   │   │   ├── solids
+│   │   │   │   │   │   ├── interfaces
+│   ├── .idea
+│   ├── src
+│   │   ├── utils
+│   │   ├── visual
+│   │   ├── Main
+│   │   ├── data
+│   │   │   ├── blocks
+│   │   │   │   ├── solids
+│   │   │   │   ├── interfaces
 ├── lab 3
-│   ├── .idea
 │   ├── Lab1
-│   │   └── .idea
+│   │   ├── .idea
 │   ├── out
-│   │   └── production
-│   │       ├── Lab1
-│   │       │   ├── Main
-│   │       │   └── data
-│   │       └── lab 2
-│   │           ├── Main
-│   │           ├── data
-│   │           │   └── blocks
-│   │           │       ├── interfaces
-│   │           │       ├── solids
-│   │           │       └── utils
-│   │           ├── utils
-│   │           └── visual
-│   └── src
-│       ├── Main
-│       ├── data
-│       │   └── blocks
-│       │       ├── interfaces
-│       │       ├── solids
-│       │       └── utils
-│       ├── utils
-│       └── visual
-└── lab4
-    ├── .idea
-    │   └── libraries
-    ├── Lab1
-    │   └── .idea
-    ├── out
-    │   └── production
-    │       ├── Lab1
-    │       │   ├── Main
-    │       │   └── data
-    │       └── lab 2
-    │           ├── Main
-    │           ├── data
-    │           │   └── blocks
-    │           │       ├── interfaces
-    │           │       ├── solids
-    │           │       └── utils
-    │           ├── utils
-    │           └── visual
-    │               ├── GUI
-    │               └── textual
-    └── src
-        ├── Main
-        ├── data
-        │   └── blocks
-        │       ├── interfaces
-        │       ├── solids
-        │       └── utils
-        ├── utils
-        └── visual
-            ├── GUI
-            └── textual
+│   │   ├── production
+│   │   │   ├── Lab1
+│   │   │   │   ├── Main
+│   │   │   │   ├── data
+│   │   │   ├── lab 2
+│   │   │   │   ├── utils
+│   │   │   │   ├── visual
+│   │   │   │   ├── Main
+│   │   │   │   ├── data
+│   │   │   │   │   ├── blocks
+│   │   │   │   │   │   ├── utils
+│   │   │   │   │   │   ├── solids
+│   │   │   │   │   │   ├── interfaces
+│   ├── .idea
+│   ├── src
+│   │   ├── utils
+│   │   ├── visual
+│   │   ├── Main
+│   │   ├── data
+│   │   │   ├── blocks
+│   │   │   │   ├── utils
+│   │   │   │   ├── solids
+│   │   │   │   ├── interfaces
 ```
