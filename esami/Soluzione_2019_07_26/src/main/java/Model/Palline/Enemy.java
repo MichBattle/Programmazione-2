@@ -6,18 +6,36 @@ import javafx.scene.paint.Color;
 
 import java.util.Random;
 
+/**
+ * Classe astratta che rappresenta una pallina nemica.
+ * Estende la classe Pallina.
+ */
 public abstract class Enemy extends Pallina {
     private Direzione direzione;
 
+    /**
+     * Costruttore della classe Enemy.
+     * Inizializza una pallina nemica con un determinato colore e crea una direzione casuale.
+     *
+     * @param colore Colore della pallina nemica.
+     */
     public Enemy(Color colore) {
         super(colore);
         creaDirezione();
     }
 
+    /**
+     * Restituisce la direzione corrente della pallina nemica.
+     *
+     * @return Direzione corrente della pallina nemica.
+     */
     public Direzione getDirezione() {
         return direzione;
     }
 
+    /**
+     * Crea una direzione casuale per la pallina nemica.
+     */
     public void creaDirezione(){
         Random r = new Random();
         switch (r.nextInt(8)){
@@ -48,27 +66,30 @@ public abstract class Enemy extends Pallina {
         }
     }
 
+    /**
+     * Muove la pallina nemica nella direzione corrente.
+     */
     public void muovi(){
         if(getDirezione().equals(Direzione.SU)){
-            setCenterY(getCenterY()-10);
+            setCenterY(getCenterY() - 10);
         } else if(getDirezione().equals(Direzione.GIU)){
-            setCenterY(getCenterY()+10);
+            setCenterY(getCenterY() + 10);
         } else if(getDirezione().equals(Direzione.DESTRA)){
-            setCenterX(getCenterX()+10);
+            setCenterX(getCenterX() + 10);
         } else if(getDirezione().equals(Direzione.SINISTRA)){
-            setCenterX(getCenterX()-10);
+            setCenterX(getCenterX() - 10);
         } else if(getDirezione().equals(Direzione.ALTO_DESTRA)){
-            setCenterX(getCenterX()+10);
-            setCenterY(getCenterY()-10);
+            setCenterX(getCenterX() + 10);
+            setCenterY(getCenterY() - 10);
         } else if(getDirezione().equals(Direzione.ALTO_SINISTRA)){
-            setCenterY(getCenterY()-10);
-            setCenterX(getCenterX()-10);
+            setCenterY(getCenterY() - 10);
+            setCenterX(getCenterX() - 10);
         } else if(getDirezione().equals(Direzione.BASSO_DESTRA)){
-            setCenterY(getCenterY()+10);
-            setCenterX(getCenterX()+10);
+            setCenterY(getCenterY() + 10);
+            setCenterX(getCenterX() + 10);
         } else if (getDirezione().equals(Direzione.BASSO_SINISTRA)){
-            setCenterY(getCenterY()+10);
-            setCenterX(getCenterX()-10);
+            setCenterY(getCenterY() + 10);
+            setCenterX(getCenterX() - 10);
         }
     }
 }
