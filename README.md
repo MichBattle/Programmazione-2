@@ -360,7 +360,6 @@ Folder Structure:
 │       │       └── tre
 │       └── generated-sources
 │           └── annotations
-├── a
 ├── esami
 │   ├── Soluzione_2018_06_15
 │   │   ├── .idea
