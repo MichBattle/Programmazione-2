@@ -507,7 +507,38 @@ Folder Structure:
 │   │       │           └── soluzione_2019_06_19
 │   │       └── generated-sources
 │   │           └── annotations
-│   └── Soluzione_2019_07_26
+│   ├── Soluzione_2019_07_26
+│   │   ├── .idea
+│   │   ├── .mvn
+│   │   │   └── wrapper
+│   │   ├── src
+│   │   │   └── main
+│   │   │       ├── java
+│   │   │       │   ├── Controller
+│   │   │       │   ├── Model
+│   │   │       │   │   └── Palline
+│   │   │       │   │       └── Nemici
+│   │   │       │   ├── View
+│   │   │       │   └── org
+│   │   │       │       └── example
+│   │   │       │           └── soluzione_2019_07_26
+│   │   │       └── resources
+│   │   │           └── org
+│   │   │               └── example
+│   │   │                   └── soluzione_2019_07_26
+│   │   └── target
+│   │       ├── classes
+│   │       │   ├── Controller
+│   │       │   ├── Model
+│   │       │   │   └── Palline
+│   │       │   │       └── Nemici
+│   │       │   ├── View
+│   │       │   └── org
+│   │       │       └── example
+│   │       │           └── soluzione_2019_07_26
+│   │       └── generated-sources
+│   │           └── annotations
+│   └── Soluzione_2019_09_06
 │       ├── .idea
 │       ├── .mvn
 │       │   └── wrapper
@@ -516,26 +547,22 @@ Folder Structure:
 │       │       ├── java
 │       │       │   ├── Controller
 │       │       │   ├── Model
-│       │       │   │   └── Palline
-│       │       │   │       └── Nemici
+│       │       │   │   └── Figure
 │       │       │   ├── View
-│       │       │   └── org
-│       │       │       └── example
-│       │       │           └── soluzione_2019_07_26
+│       │       │   │   ├── Bottoni
+│       │       │   │   └── Caselle
+│       │       │   └── com
+│       │       │       └── soluzione_2019_09_06
 │       │       └── resources
-│       │           └── org
-│       │               └── example
-│       │                   └── soluzione_2019_07_26
+│       │           └── com
+│       │               └── soluzione_2019_09_06
 │       └── target
 │           ├── classes
 │           │   ├── Controller
 │           │   ├── Model
-│           │   │   └── Palline
-│           │   │       └── Nemici
 │           │   ├── View
-│           │   └── org
-│           │       └── example
-│           │           └── soluzione_2019_07_26
+│           │   └── com
+│           │       └── soluzione_2019_09_06
 │           └── generated-sources
 │               └── annotations
 ├── lab 1
