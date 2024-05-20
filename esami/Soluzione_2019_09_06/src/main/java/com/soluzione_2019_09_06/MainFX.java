@@ -1,22 +1,25 @@
 package com.soluzione_2019_09_06;
 
+import Controller.KeyHandler;
+import Controller.MainGUI;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 public class MainFX extends Application {
-    private final static double LATO_EMPTY_FIGURE = 40;
-    private final static double LATO_TRIANGOLO = 30;
-    private final static double RAGGIO_CERCHIO = 30;
+    private final static double LATO_EMPTY_FIGURE = 50;
+    private final static double LATO_TRIANGOLO = 55;
+    private final static double RAGGIO_CERCHIO = 25;
 
     @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainFX.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+    public void start(Stage stage){
+        MainGUI mg = new MainGUI();
+        Scene scene = new Scene(mg, 250, 315);
+        mg.setAlignment(Pos.BOTTOM_CENTER);
+        KeyHandler kh = new KeyHandler(mg, scene);
+        kh.handleKeys();
+        stage.setTitle("TRE!");
         stage.setScene(scene);
         stage.show();
     }

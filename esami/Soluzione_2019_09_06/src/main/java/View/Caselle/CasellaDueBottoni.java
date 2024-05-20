@@ -1,10 +1,12 @@
-package View;
+package View.Caselle;
 
+import View.Bottoni.Bottoni;
+import View.Casella;
 import javafx.scene.layout.HBox;
 
 public class CasellaDueBottoni extends Casella {
-    public CasellaDueBottoni(Bottoni b) {
-        super(b);
+    public CasellaDueBottoni() {
+        super();
     }
 
     @Override

@@ -1,8 +1,9 @@
-package View;
+package View.Bottoni;
 
-import Model.Cerchio;
-import Model.EmptyFigure;
-import Model.Triangolo;
+import Model.Figure.Cerchio;
+import Model.Figure.EmptyFigure;
+import Model.Figure.Triangolo;
+import View.Casella;
 import com.soluzione_2019_09_06.MainFX;
 import javafx.scene.control.Button;
 import javafx.scene.shape.Shape;
@@ -14,17 +15,12 @@ public class Bottoni {
     private Button cerchio;
     private Button triangolo;
     private Button random;
-    private Button clearAll;
-    private Button check;
 
     public Bottoni(Casella c) {
         cancella = new Button("C");
         cerchio = new Button("O");
         triangolo = new Button("T");
         random = new Button("R");
-
-        clearAll = new Button("Clear All");
-        check = new Button("Check");
 
         setCancellaAction(c);
         setCerchioAction(c);
@@ -76,13 +72,5 @@ public class Bottoni {
 
     public Button getRandom() {
         return random;
-    }
-
-    public Button getClearAll() {
-        return clearAll;
-    }
-
-    public Button getCheck() {
-        return check;
     }
 }

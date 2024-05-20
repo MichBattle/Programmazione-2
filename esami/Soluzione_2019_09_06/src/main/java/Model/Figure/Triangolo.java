@@ -1,4 +1,4 @@
-package Model;
+package Model.Figure;
 
 import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
@@ -20,6 +20,6 @@ public class Triangolo extends Polygon {
         }
 
         super.setFill(Color.YELLOW);
-        super.setStroke(Color.BLACK);
+        super.setStroke(Color.RED);
     }
 }

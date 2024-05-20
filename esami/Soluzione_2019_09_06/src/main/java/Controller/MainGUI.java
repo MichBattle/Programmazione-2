@@ -1,17 +1,29 @@
 package Controller;
 
-import View.Bottoni;
-import View.BottoniPerGestire;
+import View.Bottoni.BottoniPerGestire;
 import View.ScacchieraPane;
+import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
 
 public class MainGUI extends VBox {
     private ScacchieraPane scacchieraPane;
     private BottoniPerGestire bottoniPerGestire;
-    private Bottoni bottoni;
 
     public MainGUI() {
         super();
-        bottoni = new Bottoni();
+        scacchieraPane = new ScacchieraPane();
+        bottoniPerGestire = new BottoniPerGestire(scacchieraPane);
+
+        super.getChildren().addAll(scacchieraPane, bottoniPerGestire);
+        bottoniPerGestire.setAlignment(Pos.CENTER);
+        scacchieraPane.setAlignment(Pos.CENTER);
+    }
+
+    public BottoniPerGestire getBottoniPerGestire() {
+        return bottoniPerGestire;
+    }
+
+    public ScacchieraPane getScacchieraPane() {
+        return scacchieraPane;
     }
 }
