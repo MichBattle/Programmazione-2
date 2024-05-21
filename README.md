@@ -133,7 +133,6 @@ Folder Structure:
 │               └── org
 │                   └── example
 │                       └── streamthis
-├── a
 ├── esami
 │   ├── Soluzione_2018_06_15
 │   │   ├── .idea
