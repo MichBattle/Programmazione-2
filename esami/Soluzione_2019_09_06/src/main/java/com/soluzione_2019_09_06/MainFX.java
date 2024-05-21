@@ -15,7 +15,7 @@ public class MainFX extends Application {
     @Override
     public void start(Stage stage){
         MainGUI mg = new MainGUI();
-        Scene scene = new Scene(mg, 250, 315);
+        Scene scene = new Scene(mg, 270, 315);
         mg.setAlignment(Pos.BOTTOM_CENTER);
         KeyHandler kh = new KeyHandler(mg, scene);
         kh.handleKeys();
