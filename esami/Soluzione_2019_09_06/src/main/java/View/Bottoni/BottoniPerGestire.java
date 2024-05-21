@@ -11,10 +11,19 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 
+/**
+ * La classe BottoniPerGestire estende HBox di JavaFX e fornisce bottoni per gestire e controllare una ScacchieraPane.
+ */
 public class BottoniPerGestire extends HBox {
     private Button clearAll;
     private Button check;
 
+    /**
+     * Costruisce una nuova istanza di BottoniPerGestire associata ad una specifica ScacchieraPane.
+     * Inizializza i bottoni e imposta le loro azioni.
+     *
+     * @param scacchieraPane La ScacchieraPane associata ai bottoni.
+     */
     public BottoniPerGestire(ScacchieraPane scacchieraPane) {
         super();
         clearAll = new Button("clear All");
@@ -27,15 +36,25 @@ public class BottoniPerGestire extends HBox {
         super.setSpacing(25);
     }
 
-    public void clearAllAction(ScacchieraPane sp){
+    /**
+     * Cancella tutte le forme nella ScacchieraPane impostandole a EmptyFigure.
+     *
+     * @param sp La ScacchieraPane da pulire.
+     */
+    public void clearAllAction(ScacchieraPane sp) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                ((Casella)sp.getElementAt(i, j)).setForma(new EmptyFigure(MainFX.getLATO_EMPTY_FIGURE()));
+                ((Casella) sp.getElementAt(i, j)).setForma(new EmptyFigure(MainFX.getLATO_EMPTY_FIGURE()));
             }
         }
     }
 
-    public void checkAction(ScacchieraPane sp){
+    /**
+     * Controlla se ci sono tre forme uguali in una riga o colonna nella ScacchieraPane e mostra un avviso se ne trova.
+     *
+     * @param sp La ScacchieraPane da controllare.
+     */
+    public void checkAction(ScacchieraPane sp) {
         int countTriangolo;
         int countCerchio;
 
@@ -76,22 +95,33 @@ public class BottoniPerGestire extends HBox {
         }
     }
 
-    private void setClearAllAction(ScacchieraPane sp){
-        clearAll.setOnAction(event -> {
-            clearAllAction(sp);
-        });
+    /**
+     * Imposta l'azione del bottone clearAll per pulire tutte le forme nella ScacchieraPane.
+     *
+     * @param sp La ScacchieraPane su cui agire.
+     */
+    private void setClearAllAction(ScacchieraPane sp) {
+        clearAll.setOnAction(event -> clearAllAction(sp));
     }
 
-    private void setCheckAction(ScacchieraPane sp){
-        check.setOnAction(event -> {
-            checkAction(sp);
-        });
+    /**
+     * Imposta l'azione del bottone check per controllare le forme nella ScacchieraPane.
+     *
+     * @param sp La ScacchieraPane su cui agire.
+     */
+    private void setCheckAction(ScacchieraPane sp) {
+        check.setOnAction(event -> checkAction(sp));
     }
 
-    private void displayAlert(Coordinate c){
+    /**
+     * Mostra un avviso informativo se ci sono tre forme uguali in una riga o colonna.
+     *
+     * @param c La coordinata della riga o colonna con tre forme uguali.
+     */
+    private void displayAlert(Coordinate c) {
         Alert a = new Alert(Alert.AlertType.INFORMATION);
         a.setTitle("CHECK");
-        a.setContentText("Tre uguali in " + ((c.isRiga())? "riga " : "colonna ") + c.getCoordinata());
+        a.setContentText("Tre uguali in " + ((c.isRiga()) ? "riga " : "colonna ") + c.getCoordinata());
         a.setHeaderText("TRE!");
         a.showAndWait();
     }
