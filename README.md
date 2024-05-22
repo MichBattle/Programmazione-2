@@ -61,18 +61,26 @@ Folder Structure:
 │   ├── .idea
 │   ├── .mvn
 │   │   └── wrapper
-│   └── src
-│       └── main
-│           ├── java
-│           │   ├── Main
-│           │   ├── View
-│           │   │   └── Celle
-│           │   │       └── Strade
-│           │   └── com
-│           │       └── macchinina
-│           └── resources
-│               └── com
-│                   └── macchinina
+│   ├── src
+│   │   └── main
+│   │       ├── java
+│   │       │   ├── Main
+│   │       │   ├── View
+│   │       │   │   └── Celle
+│   │       │   │       └── Strade
+│   │       │   └── com
+│   │       │       └── macchinina
+│   │       └── resources
+│   │           └── com
+│   │               └── macchinina
+│   └── target
+│       └── classes
+│           ├── Main
+│           ├── View
+│           │   └── Celle
+│           │       └── Strade
+│           └── com
+│               └── macchinina
 ├── Numbers
 │   ├── .idea
 │   ├── .mvn
@@ -268,7 +276,35 @@ Folder Structure:
 │   │               └── org
 │   │                   └── example
 │   │                       └── soluzione_2019_07_26
-│   └── Soluzione_2019_09_06
+│   ├── Soluzione_2019_09_06
+│   │   ├── .idea
+│   │   ├── .mvn
+│   │   │   └── wrapper
+│   │   ├── src
+│   │   │   └── main
+│   │   │       ├── java
+│   │   │       │   ├── Controller
+│   │   │       │   ├── Model
+│   │   │       │   │   └── Figure
+│   │   │       │   ├── View
+│   │   │       │   │   ├── Bottoni
+│   │   │       │   │   └── Caselle
+│   │   │       │   └── com
+│   │   │       │       └── soluzione_2019_09_06
+│   │   │       └── resources
+│   │   │           └── com
+│   │   │               └── soluzione_2019_09_06
+│   │   └── target
+│   │       └── classes
+│   │           ├── Controller
+│   │           ├── Model
+│   │           │   └── Figure
+│   │           ├── View
+│   │           │   ├── Bottoni
+│   │           │   └── Caselle
+│   │           └── com
+│   │               └── soluzione_2019_09_06
+│   └── Soluzione_2020_01_19
 │       ├── .idea
 │       ├── .mvn
 │       │   └── wrapper
@@ -277,25 +313,25 @@ Folder Structure:
 │       │       ├── java
 │       │       │   ├── Controller
 │       │       │   ├── Model
-│       │       │   │   └── Figure
+│       │       │   │   └── Celle
+│       │       │   │       └── Strade
 │       │       │   ├── View
-│       │       │   │   ├── Bottoni
-│       │       │   │   └── Caselle
 │       │       │   └── com
-│       │       │       └── soluzione_2019_09_06
+│       │       │       └── soluzione_2020_01_19
 │       │       └── resources
 │       │           └── com
-│       │               └── soluzione_2019_09_06
+│       │               └── soluzione_2020_01_19
 │       └── target
-│           └── classes
-│               ├── Controller
-│               ├── Model
-│               │   └── Figure
-│               ├── View
-│               │   ├── Bottoni
-│               │   └── Caselle
-│               └── com
-│                   └── soluzione_2019_09_06
+│           ├── classes
+│           │   ├── Controller
+│           │   ├── Model
+│           │   │   └── Celle
+│           │   │       └── Strade
+│           │   ├── View
+│           │   └── com
+│           │       └── soluzione_2020_01_19
+│           └── generated-sources
+│               └── annotations
 └── lab
     ├── lab 1
     │   ├── .idea
