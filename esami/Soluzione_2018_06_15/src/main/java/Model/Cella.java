@@ -101,7 +101,7 @@ public abstract class Cella extends StackPane {
      */
     private void setSuperAction(Color coloreNascosto){
         super.setOnMouseClicked(event -> {
-            if(!mg.getStatsPane().isGameOver()){
+            if(!mg.getStatsPane().isGameOver() && isCoperta){
                 StatsPane sp = mg.getStatsPane();
                 int nuovoNumeroTentativi = sp.getTentativi() - 1;
                 sp.setTentativi(nuovoNumeroTentativi);
