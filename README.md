@@ -313,9 +313,12 @@ Folder Structure:
 │       │       ├── java
 │       │       │   ├── Controller
 │       │       │   ├── Model
-│       │       │   │   └── Celle
-│       │       │   │       └── Strade
+│       │       │   │   ├── Celle
+│       │       │   │   │   └── Strade
+│       │       │   │   └── Utils
 │       │       │   ├── View
+│       │       │   │   ├── Autos
+│       │       │   │   └── Bottoni
 │       │       │   └── com
 │       │       │       └── soluzione_2020_01_19
 │       │       └── resources
