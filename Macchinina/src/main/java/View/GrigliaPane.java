@@ -33,7 +33,6 @@ public class GrigliaPane extends GridPane {
         for (Node node : super.getChildren()) {
             Integer rowIndex = GridPane.getRowIndex(node);
             Integer colIndex = GridPane.getColumnIndex(node);
-
             if (rowIndex != null && colIndex != null && rowIndex == y && colIndex == x) {
                 return node;
             }
