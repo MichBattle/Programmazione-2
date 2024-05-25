@@ -304,7 +304,38 @@ Folder Structure:
 │   │           │   └── Caselle
 │   │           └── com
 │   │               └── soluzione_2019_09_06
-│   └── Soluzione_2020_01_19
+│   ├── Soluzione_2020_01_19
+│   │   ├── .idea
+│   │   ├── .mvn
+│   │   │   └── wrapper
+│   │   ├── src
+│   │   │   └── main
+│   │   │       ├── java
+│   │   │       │   ├── Controller
+│   │   │       │   ├── Model
+│   │   │       │   │   ├── Celle
+│   │   │       │   │   │   └── Strade
+│   │   │       │   │   └── Utils
+│   │   │       │   ├── View
+│   │   │       │   │   ├── Autos
+│   │   │       │   │   └── Bottoni
+│   │   │       │   └── com
+│   │   │       │       └── soluzione_2020_01_19
+│   │   │       └── resources
+│   │   │           └── com
+│   │   │               └── soluzione_2020_01_19
+│   │   └── target
+│   │       ├── classes
+│   │       │   ├── Controller
+│   │       │   ├── Model
+│   │       │   │   └── Celle
+│   │       │   │       └── Strade
+│   │       │   ├── View
+│   │       │   └── com
+│   │       │       └── soluzione_2020_01_19
+│   │       └── generated-sources
+│   │           └── annotations
+│   └── Soluzione_2020_02_05
 │       ├── .idea
 │       ├── .mvn
 │       │   └── wrapper
@@ -313,26 +344,23 @@ Folder Structure:
 │       │       ├── java
 │       │       │   ├── Controller
 │       │       │   ├── Model
-│       │       │   │   ├── Celle
-│       │       │   │   │   └── Strade
-│       │       │   │   └── Utils
+│       │       │   │   ├── CelleCentrali
+│       │       │   │   └── CelleLaterali
 │       │       │   ├── View
-│       │       │   │   ├── Autos
-│       │       │   │   └── Bottoni
 │       │       │   └── com
-│       │       │       └── soluzione_2020_01_19
+│       │       │       └── soluzione_2020_02_05
 │       │       └── resources
 │       │           └── com
-│       │               └── soluzione_2020_01_19
+│       │               └── soluzione_2020_02_05
 │       └── target
 │           ├── classes
 │           │   ├── Controller
 │           │   ├── Model
-│           │   │   └── Celle
-│           │   │       └── Strade
+│           │   │   ├── CelleCentrali
+│           │   │   └── CelleLaterali
 │           │   ├── View
 │           │   └── com
-│           │       └── soluzione_2020_01_19
+│           │       └── soluzione_2020_02_05
 │           └── generated-sources
 │               └── annotations
 └── lab
