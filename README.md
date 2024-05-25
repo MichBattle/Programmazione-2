@@ -8,32 +8,23 @@ To invite people to this repo, please contact the organization administrator.
 
 Folder Structure:
 ```
-├── Escape
-│   ├── .idea
-│   ├── .mvn
-│   │   └── wrapper
-│   └── src
-│       └── main
-│           ├── java
-│           │   ├── Control
-│           │   ├── Main
-│           │   │   └── enemy
-│           │   └── View
-│           └── resources
-│               └── controller
-│                   └── escape
 ├── Farmacia
 │   ├── .idea
 │   ├── .mvn
 │   │   └── wrapper
-│   └── src
-│       └── main
-│           ├── java
-│           │   ├── Controller
-│           │   ├── Model
-│           │   └── View
-│           └── resources
-│               └── Controller
+│   ├── src
+│   │   └── main
+│   │       ├── java
+│   │       │   ├── Controller
+│   │       │   ├── Model
+│   │       │   └── View
+│   │       └── resources
+│   │           └── Controller
+│   └── target
+│       └── classes
+│           ├── Controller
+│           ├── Model
+│           └── View
 ├── GeraltGUI
 │   ├── .idea
 │   ├── .mvn
@@ -57,47 +48,6 @@ Folder Structure:
 │               └── org
 │                   └── example
 │                       └── geraltgui
-├── Macchinina
-│   ├── .idea
-│   ├── .mvn
-│   │   └── wrapper
-│   ├── src
-│   │   └── main
-│   │       ├── java
-│   │       │   ├── Main
-│   │       │   ├── View
-│   │       │   │   └── Celle
-│   │       │   │       └── Strade
-│   │       │   └── com
-│   │       │       └── macchinina
-│   │       └── resources
-│   │           └── com
-│   │               └── macchinina
-│   └── target
-│       └── classes
-│           ├── Main
-│           ├── View
-│           │   └── Celle
-│           │       └── Strade
-│           └── com
-│               └── macchinina
-├── Numbers
-│   ├── .idea
-│   ├── .mvn
-│   │   └── wrapper
-│   └── src
-│       └── main
-│           ├── java
-│           │   ├── Controller
-│           │   ├── View
-│           │   │   └── Celle
-│           │   │       ├── Centrale
-│           │   │       └── Laterali
-│           │   └── com
-│           │       └── numbers
-│           └── resources
-│               └── com
-│                   └── numbers
 ├── OnlyFans
 │   ├── .idea
 │   ├── .mvn
