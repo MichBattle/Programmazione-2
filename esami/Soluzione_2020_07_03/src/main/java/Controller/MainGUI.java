@@ -6,16 +6,25 @@ import View.PiastrellaCorrente;
 import View.TestoPane;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-public class MainGUI extends HBox {
+/**
+ * La classe MainGUI rappresenta l'interfaccia principale dell'applicazione.
+ * Contiene i componenti per visualizzare e navigare tra le piastrelle.
+ */
+public class MainGUI extends AnchorPane {
     private TestoPane testoPane;
     private ButtonPane buttonPane;
     private Catalogo catalogo;
     private PiastrellaCorrente piastrellaCorrente;
     private static int GENERAL_INDEX;
 
+    /**
+     * Costruttore della classe MainGUI.
+     * Inizializza l'interfaccia utente con i componenti necessari.
+     */
     public MainGUI() {
         super();
         GENERAL_INDEX = 0;
@@ -25,31 +34,55 @@ public class MainGUI extends HBox {
         piastrellaCorrente = new PiastrellaCorrente(catalogo);
 
         VBox vb = new VBox(testoPane, buttonPane);
-        vb.setSpacing(10);
+        vb.setSpacing(5);
 
         super.getChildren().addAll(vb, piastrellaCorrente);
-        super.setAlignment(Pos.CENTER);
-        super.setPadding(new Insets(0,0,50,20));
 
+        AnchorPane.setLeftAnchor(vb, 20.0);
+        AnchorPane.setTopAnchor(vb, 30.0);
+
+        AnchorPane.setRightAnchor(piastrellaCorrente, 20.0);
+        AnchorPane.setTopAnchor(piastrellaCorrente, 20.0);
     }
 
+    /**
+     * Restituisce l'oggetto PiastrellaCorrente.
+     *
+     * @return L'oggetto PiastrellaCorrente.
+     */
     public PiastrellaCorrente getPiastrellaCorrente() {
         return piastrellaCorrente;
     }
 
+    /**
+     * Restituisce l'oggetto TestoPane.
+     *
+     * @return L'oggetto TestoPane.
+     */
     public TestoPane getTestoPane() {
         return testoPane;
     }
 
+    /**
+     * Restituisce l'indice generale.
+     *
+     * @return L'indice generale.
+     */
     public static int getGeneralIndex() {
         return GENERAL_INDEX;
     }
 
+    /**
+     * Incrementa l'indice generale.
+     */
     public static void incrementGeneralIndex() {
         GENERAL_INDEX++;
     }
 
-    public static void decrementGeneralIndex(){
+    /**
+     * Decrementa l'indice generale.
+     */
+    public static void decrementGeneralIndex() {
         GENERAL_INDEX--;
     }
 }
