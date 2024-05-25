@@ -10,9 +10,7 @@ public class StatsPane extends VBox {
 
     public StatsPane(Geralt k) {
         super();
-
         this.g = k;
-
         update_stats();
     }
 

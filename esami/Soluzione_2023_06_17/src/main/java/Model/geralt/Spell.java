@@ -1,4 +1,4 @@
-package model.geralt;
+package Model.geralt;
 
 public enum Spell {
     Igni,
