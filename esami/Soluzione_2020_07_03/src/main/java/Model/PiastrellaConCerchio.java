@@ -11,7 +11,6 @@ public class PiastrellaConCerchio extends PiastrellaParticolare{
     @Override
     public void impostaFormaContenuta() {
         Circle c = new Circle(getLatoFiguraInterna());
-        c.setFill(Color.WHITE);
         setFormaContenuta(c);
     }
 }

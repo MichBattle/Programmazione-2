@@ -13,6 +13,7 @@ public abstract class PiastrellaParticolare extends Piastrella{
             indiceColoreInterno = 1;
             setFormaInternaAction();
         }
+        formaContenuta.setFill(getColoriDisponibili().get(1));
         super.getChildren().add(formaContenuta);
     }
 
@@ -28,7 +29,7 @@ public abstract class PiastrellaParticolare extends Piastrella{
 
     private void setFormaInternaAction(){
         formaContenuta.setOnMouseClicked(event -> {
-            incrementaIndice(indiceColoreInterno);
+            indiceColoreInterno = incrementaIndice(indiceColoreInterno);
             formaContenuta.setFill(getColoriDisponibili().get(indiceColoreInterno));
         });
     }

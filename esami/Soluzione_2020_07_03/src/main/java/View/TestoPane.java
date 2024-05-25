@@ -19,5 +19,6 @@ public class TestoPane extends Pane {
     public void aggiornaTesto(){
         super.getChildren().clear();
         testo.setText(catalogo.getPiastrelle().get(MainGUI.getGeneralIndex()).toString());
+        super.getChildren().add(testo);
     }
 }

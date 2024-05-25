@@ -16,6 +16,7 @@ public class Piastrella extends StackPane {
 
     public Piastrella(String codice, String materiale, double prezzo, double lunghezzaLato, boolean sceltaColore) {
         super();
+        coloriDisponibili = new Colori();
         this.codice = codice;
         this.materiale = materiale;
         this.prezzo = prezzo;
@@ -23,7 +24,6 @@ public class Piastrella extends StackPane {
         this.sceltaColore = sceltaColore;
 
         if(sceltaColore) {
-            coloriDisponibili = new Colori();
             indiceColoreBase = 0;
             impostaEventoSuper();
         }
@@ -45,16 +45,17 @@ public class Piastrella extends StackPane {
         return lunghezzaLato;
     }
 
-    public void incrementaIndice(int indice){
+    public int incrementaIndice(int indice){
         indice++;
         if(indice == 6)
             indice = 0;
+        return indice;
     }
 
     private void impostaEventoSuper(){
         super.setOnMouseClicked(event -> {
-            Rectangle r = (Rectangle) super.getChildren().getLast();
-            incrementaIndice(indiceColoreBase);
+            Rectangle r = (Rectangle) (super.getChildren().get(super.getChildren().size() - 1)); //getLast
+            indiceColoreBase = incrementaIndice(indiceColoreBase);
             r.setFill(coloriDisponibili.get(indiceColoreBase));
         });
     }

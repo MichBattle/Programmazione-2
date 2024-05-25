@@ -12,7 +12,6 @@ public class PiastrellaConQuadrato extends PiastrellaParticolare{
     @Override
     public void impostaFormaContenuta() {
         Rectangle r = new Rectangle(getLatoFiguraInterna(), getLatoFiguraInterna());
-        r.setFill(Color.WHITE);
         setFormaContenuta(r);
     }
 }
