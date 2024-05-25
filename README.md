@@ -285,7 +285,35 @@ Folder Structure:
 │   │       │       └── soluzione_2020_01_19
 │   │       └── generated-sources
 │   │           └── annotations
-│   └── Soluzione_2020_02_05
+│   ├── Soluzione_2020_02_05
+│   │   ├── .idea
+│   │   ├── .mvn
+│   │   │   └── wrapper
+│   │   ├── src
+│   │   │   └── main
+│   │   │       ├── java
+│   │   │       │   ├── Controller
+│   │   │       │   ├── Model
+│   │   │       │   │   ├── CelleCentrali
+│   │   │       │   │   └── CelleLaterali
+│   │   │       │   ├── View
+│   │   │       │   └── com
+│   │   │       │       └── soluzione_2020_02_05
+│   │   │       └── resources
+│   │   │           └── com
+│   │   │               └── soluzione_2020_02_05
+│   │   └── target
+│   │       ├── classes
+│   │       │   ├── Controller
+│   │       │   ├── Model
+│   │       │   │   ├── CelleCentrali
+│   │       │   │   └── CelleLaterali
+│   │       │   ├── View
+│   │       │   └── com
+│   │       │       └── soluzione_2020_02_05
+│   │       └── generated-sources
+│   │           └── annotations
+│   └── Soluzione_2020_07_03
 │       ├── .idea
 │       ├── .mvn
 │       │   └── wrapper
@@ -294,23 +322,22 @@ Folder Structure:
 │       │       ├── java
 │       │       │   ├── Controller
 │       │       │   ├── Model
-│       │       │   │   ├── CelleCentrali
-│       │       │   │   └── CelleLaterali
 │       │       │   ├── View
-│       │       │   └── com
-│       │       │       └── soluzione_2020_02_05
+│       │       │   └── org
+│       │       │       └── example
+│       │       │           └── soluzione_2020_07_03
 │       │       └── resources
-│       │           └── com
-│       │               └── soluzione_2020_02_05
+│       │           └── org
+│       │               └── example
+│       │                   └── soluzione_2020_07_03
 │       └── target
 │           ├── classes
 │           │   ├── Controller
 │           │   ├── Model
-│           │   │   ├── CelleCentrali
-│           │   │   └── CelleLaterali
 │           │   ├── View
-│           │   └── com
-│           │       └── soluzione_2020_02_05
+│           │   └── org
+│           │       └── example
+│           │           └── soluzione_2020_07_03
 │           └── generated-sources
 │               └── annotations
 └── lab
