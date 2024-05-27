@@ -63,19 +63,6 @@ Folder Structure:
 │               └── org
 │                   └── example
 │                       └── onlyfans
-├── Piastrelle
-│   ├── .idea
-│   ├── .mvn
-│   │   └── wrapper
-│   └── src
-│       └── main
-│           ├── java
-│           │   ├── View
-│           │   └── com
-│           │       └── piastrelle
-│           └── resources
-│               └── com
-│                   └── piastrelle
 ├── StreamThis
 │   ├── .idea
 │   ├── .mvn
@@ -313,7 +300,36 @@ Folder Structure:
 │   │       │       └── soluzione_2020_02_05
 │   │       └── generated-sources
 │   │           └── annotations
-│   └── Soluzione_2020_07_03
+│   ├── Soluzione_2020_07_03
+│   │   ├── .idea
+│   │   ├── .mvn
+│   │   │   └── wrapper
+│   │   ├── src
+│   │   │   └── main
+│   │   │       ├── java
+│   │   │       │   ├── Controller
+│   │   │       │   ├── Model
+│   │   │       │   │   └── Piastrelle
+│   │   │       │   │       └── PiastrelleParticolari
+│   │   │       │   ├── View
+│   │   │       │   └── org
+│   │   │       │       └── example
+│   │   │       │           └── soluzione_2020_07_03
+│   │   │       └── resources
+│   │   │           └── org
+│   │   │               └── example
+│   │   │                   └── soluzione_2020_07_03
+│   │   └── target
+│   │       ├── classes
+│   │       │   ├── Controller
+│   │       │   ├── Model
+│   │       │   ├── View
+│   │       │   └── org
+│   │       │       └── example
+│   │       │           └── soluzione_2020_07_03
+│   │       └── generated-sources
+│   │           └── annotations
+│   └── Soluzione_2023_06_17
 │       ├── .idea
 │       ├── .mvn
 │       │   └── wrapper
@@ -322,22 +338,36 @@ Folder Structure:
 │       │       ├── java
 │       │       │   ├── Controller
 │       │       │   ├── Model
+│       │       │   │   ├── geralt
+│       │       │   │   └── mutations
+│       │       │   │       ├── abstracts
+│       │       │   │       └── muts
+│       │       │   │           ├── combat
+│       │       │   │           ├── potions
+│       │       │   │           └── spells
 │       │       │   ├── View
 │       │       │   └── org
 │       │       │       └── example
-│       │       │           └── soluzione_2020_07_03
+│       │       │           └── soluzione_2023_06_17
 │       │       └── resources
 │       │           └── org
 │       │               └── example
-│       │                   └── soluzione_2020_07_03
+│       │                   └── soluzione_2023_06_17
 │       └── target
 │           ├── classes
 │           │   ├── Controller
 │           │   ├── Model
+│           │   │   ├── geralt
+│           │   │   └── mutations
+│           │   │       ├── abstracts
+│           │   │       └── muts
+│           │   │           ├── combat
+│           │   │           ├── potions
+│           │   │           └── spells
 │           │   ├── View
 │           │   └── org
 │           │       └── example
-│           │           └── soluzione_2020_07_03
+│           │           └── soluzione_2023_06_17
 │           └── generated-sources
 │               └── annotations
 └── lab
