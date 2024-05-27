@@ -12,8 +12,6 @@ public class MainGUI extends BorderPane {
     private TitoliPane titoli_pane;
     private ButtonPane bp;
 
-    private Button indietro;
-    private Button avanti;
     private Button clear;
     private RightPane right_pane;
 
@@ -26,8 +24,8 @@ public class MainGUI extends BorderPane {
         bp = new ButtonPane(this);
         right_pane = new RightPane(this, archivio);
 
-        indietro = bp.getBack();
-        avanti = bp.getForward();
+        Button indietro = bp.getBack();
+        Button avanti = bp.getForward();
         clear = bp.getClear();
 
         HBox hb = new HBox(indietro, titoli_pane, avanti);
