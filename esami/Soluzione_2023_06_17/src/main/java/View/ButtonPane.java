@@ -16,17 +16,16 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
 /**
- * La classe ButtonPane rappresenta un pannello di pulsanti per la gestione delle mutazioni di Geralt.
+ * Classe per creare il pannello dei pulsanti che permettono di applicare e rimuovere mutazioni a Geralt.
  */
 public class ButtonPane extends HBox {
     private static final int RECTANGLE_SIZE = 50;
     private MainGUI mg;
 
     /**
-     * Costruttore della classe ButtonPane.
-     * Inizializza i pulsanti per la gestione delle mutazioni di Geralt.
+     * Costruttore per creare il pannello dei pulsanti.
      *
-     * @param mg Riferimento all'oggetto MainGUI per aggiornare l'interfaccia utente.
+     * @param mg L'oggetto MainGUI che gestisce l'interfaccia principale.
      */
     public ButtonPane(MainGUI mg) {
         super();
@@ -48,9 +47,9 @@ public class ButtonPane extends HBox {
     }
 
     /**
-     * Crea uno slot di mutazione con un rettangolo colorato e testo.
+     * Crea uno slot con un rettangolo colorato e un testo che rappresenta una mutazione.
      *
-     * @param s Il testo da visualizzare nello slot.
+     * @param s Il testo della mutazione.
      * @param c Il colore del rettangolo.
      * @return Lo StackPane contenente il rettangolo e il testo.
      */
@@ -67,12 +66,14 @@ public class ButtonPane extends HBox {
                 rimuovi_mutazione(k, g);
                 t.setText("+" + k);
             } else if (g.isPresent(k).equals("+")) {
-                try {
+                if (k == Mutation.Tol) {
                     applica_mutazione(k, g);
                     t.setText("-" + k);
-                } catch (Exception e) {
+                } else if(!(g.getMutations().get(0) != Mutation.Empty && g.getMutations().get(1) != Mutation.Empty && g.getMutations().get(3) != Mutation.Empty)) {
+                    applica_mutazione(k, g);
+                    t.setText("-" + k);
+                } else
                     AlertDisplayer.display_error_alert("Non puoi aggiungere altre mutazioni di questo tipo, lo slot aggiuntivo è già occupato!");
-                }
             }
 
             mg.getMutationsPane().creaTesti(g);
@@ -83,10 +84,10 @@ public class ButtonPane extends HBox {
     }
 
     /**
-     * Riconosce la mutazione in base al testo fornito.
+     * Riconosce la mutazione dal testo fornito.
      *
-     * @param s Il testo della mutazione.
-     * @return La mutazione corrispondente.
+     * @param s Il testo che descrive la mutazione.
+     * @return La mutazione riconosciuta.
      */
     private Mutation riconosci_mutazione(String s) {
         if (s.contains("Str"))
@@ -106,10 +107,9 @@ public class ButtonPane extends HBox {
      * Applica la mutazione specificata a Geralt.
      *
      * @param m La mutazione da applicare.
-     * @param g L'oggetto Geralt.
-     * @throws Exception Se la mutazione non può essere applicata.
+     * @param g Il personaggio Geralt.
      */
-    private void applica_mutazione(Mutation m, Geralt g) throws Exception {
+    private void applica_mutazione(Mutation m, Geralt g) {
         switch (m) {
             case Str:
                 new StrCombatMutation(g).applica();
@@ -133,7 +133,7 @@ public class ButtonPane extends HBox {
      * Rimuove la mutazione specificata da Geralt.
      *
      * @param m La mutazione da rimuovere.
-     * @param g L'oggetto Geralt.
+     * @param g Il personaggio Geralt.
      */
     private void rimuovi_mutazione(Mutation m, Geralt g) {
         switch (m) {
