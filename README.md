@@ -25,29 +25,6 @@ Folder Structure:
 │           ├── Controller
 │           ├── Model
 │           └── View
-├── GeraltGUI
-│   ├── .idea
-│   ├── .mvn
-│   │   └── wrapper
-│   └── src
-│       └── main
-│           ├── java
-│           │   ├── View
-│           │   ├── model
-│           │   │   ├── geralt
-│           │   │   └── mutations
-│           │   │       ├── abstracts
-│           │   │       └── muts
-│           │   │           ├── combat
-│           │   │           ├── potions
-│           │   │           └── spells
-│           │   └── org
-│           │       └── example
-│           │           └── geraltgui
-│           └── resources
-│               └── org
-│                   └── example
-│                       └── geraltgui
 ├── OnlyFans
 │   ├── .idea
 │   ├── .mvn
@@ -329,7 +306,48 @@ Folder Structure:
 │   │       │           └── soluzione_2020_07_03
 │   │       └── generated-sources
 │   │           └── annotations
-│   └── Soluzione_2023_06_17
+│   ├── Soluzione_2023_06_17
+│   │   ├── .idea
+│   │   ├── .mvn
+│   │   │   └── wrapper
+│   │   ├── src
+│   │   │   └── main
+│   │   │       ├── java
+│   │   │       │   ├── Controller
+│   │   │       │   ├── Model
+│   │   │       │   │   ├── geralt
+│   │   │       │   │   └── mutations
+│   │   │       │   │       ├── abstracts
+│   │   │       │   │       └── muts
+│   │   │       │   │           ├── combat
+│   │   │       │   │           ├── potions
+│   │   │       │   │           └── spells
+│   │   │       │   ├── View
+│   │   │       │   └── org
+│   │   │       │       └── example
+│   │   │       │           └── soluzione_2023_06_17
+│   │   │       └── resources
+│   │   │           └── org
+│   │   │               └── example
+│   │   │                   └── soluzione_2023_06_17
+│   │   └── target
+│   │       ├── classes
+│   │       │   ├── Controller
+│   │       │   ├── Model
+│   │       │   │   ├── geralt
+│   │       │   │   └── mutations
+│   │       │   │       ├── abstracts
+│   │       │   │       └── muts
+│   │       │   │           ├── combat
+│   │       │   │           ├── potions
+│   │       │   │           └── spells
+│   │       │   ├── View
+│   │       │   └── org
+│   │       │       └── example
+│   │       │           └── soluzione_2023_06_17
+│   │       └── generated-sources
+│   │           └── annotations
+│   └── Soluzione_2023_07_18
 │       ├── .idea
 │       ├── .mvn
 │       │   └── wrapper
@@ -338,36 +356,21 @@ Folder Structure:
 │       │       ├── java
 │       │       │   ├── Controller
 │       │       │   ├── Model
-│       │       │   │   ├── geralt
-│       │       │   │   └── mutations
-│       │       │   │       ├── abstracts
-│       │       │   │       └── muts
-│       │       │   │           ├── combat
-│       │       │   │           ├── potions
-│       │       │   │           └── spells
+│       │       │   │   └── Ventilatori
 │       │       │   ├── View
-│       │       │   └── org
-│       │       │       └── example
-│       │       │           └── soluzione_2023_06_17
+│       │       │   └── com
+│       │       │       └── soluzione_2023_07_18
 │       │       └── resources
-│       │           └── org
-│       │               └── example
-│       │                   └── soluzione_2023_06_17
+│       │           └── com
+│       │               └── soluzione_2023_07_18
 │       └── target
 │           ├── classes
 │           │   ├── Controller
 │           │   ├── Model
-│           │   │   ├── geralt
-│           │   │   └── mutations
-│           │   │       ├── abstracts
-│           │   │       └── muts
-│           │   │           ├── combat
-│           │   │           ├── potions
-│           │   │           └── spells
+│           │   │   └── Ventilatori
 │           │   ├── View
-│           │   └── org
-│           │       └── example
-│           │           └── soluzione_2023_06_17
+│           │   └── com
+│           │       └── soluzione_2023_07_18
 │           └── generated-sources
 │               └── annotations
 └── lab
