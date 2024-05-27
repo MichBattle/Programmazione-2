@@ -25,36 +25,30 @@ Folder Structure:
 │           ├── Controller
 │           ├── Model
 │           └── View
-├── OnlyFans
-│   ├── .idea
-│   ├── .mvn
-│   │   └── wrapper
-│   └── src
-│       └── main
-│           ├── java
-│           │   ├── Controller
-│           │   │   └── Ventilators
-│           │   ├── Main
-│           │   └── View
-│           └── resources
-│               └── org
-│                   └── example
-│                       └── onlyfans
 ├── StreamThis
 │   ├── .idea
 │   ├── .mvn
 │   │   └── wrapper
-│   └── src
-│       └── main
-│           ├── java
-│           │   ├── Controller
-│           │   │   └── Titoli
-│           │   ├── Main
-│           │   └── View
-│           └── resources
-│               └── org
-│                   └── example
-│                       └── streamthis
+│   ├── src
+│   │   └── main
+│   │       ├── java
+│   │       │   ├── Controller
+│   │       │   │   └── Titoli
+│   │       │   ├── Main
+│   │       │   └── View
+│   │       └── resources
+│   │           └── org
+│   │               └── example
+│   │                   └── streamthis
+│   └── target
+│       └── classes
+│           ├── Controller
+│           │   └── Titoli
+│           ├── Main
+│           ├── View
+│           └── org
+│               └── example
+│                   └── streamthis
 ├── esami
 │   ├── Soluzione_2018_06_15
 │   │   ├── .idea
@@ -347,7 +341,33 @@ Folder Structure:
 │   │       │           └── soluzione_2023_06_17
 │   │       └── generated-sources
 │   │           └── annotations
-│   └── Soluzione_2023_07_18
+│   ├── Soluzione_2023_07_18
+│   │   ├── .idea
+│   │   ├── .mvn
+│   │   │   └── wrapper
+│   │   ├── src
+│   │   │   └── main
+│   │   │       ├── java
+│   │   │       │   ├── Controller
+│   │   │       │   ├── Model
+│   │   │       │   │   └── Ventilatori
+│   │   │       │   ├── View
+│   │   │       │   └── com
+│   │   │       │       └── soluzione_2023_07_18
+│   │   │       └── resources
+│   │   │           └── com
+│   │   │               └── soluzione_2023_07_18
+│   │   └── target
+│   │       ├── classes
+│   │       │   ├── Controller
+│   │       │   ├── Model
+│   │       │   │   └── Ventilatori
+│   │       │   ├── View
+│   │       │   └── com
+│   │       │       └── soluzione_2023_07_18
+│   │       └── generated-sources
+│   │           └── annotations
+│   └── Soluzione_2023_09_08
 │       ├── .idea
 │       ├── .mvn
 │       │   └── wrapper
@@ -356,21 +376,21 @@ Folder Structure:
 │       │       ├── java
 │       │       │   ├── Controller
 │       │       │   ├── Model
-│       │       │   │   └── Ventilatori
+│       │       │   │   └── Titoli
 │       │       │   ├── View
 │       │       │   └── com
-│       │       │       └── soluzione_2023_07_18
+│       │       │       └── soluzione_2023_09_08
 │       │       └── resources
 │       │           └── com
-│       │               └── soluzione_2023_07_18
+│       │               └── soluzione_2023_09_08
 │       └── target
 │           ├── classes
 │           │   ├── Controller
 │           │   ├── Model
-│           │   │   └── Ventilatori
+│           │   │   └── Titoli
 │           │   ├── View
 │           │   └── com
-│           │       └── soluzione_2023_07_18
+│           │       └── soluzione_2023_09_08
 │           └── generated-sources
 │               └── annotations
 └── lab
