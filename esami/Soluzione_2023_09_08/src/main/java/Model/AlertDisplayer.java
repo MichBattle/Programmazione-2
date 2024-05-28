@@ -8,7 +8,7 @@ import javafx.scene.control.Alert;
 public class AlertDisplayer {
 
     /**
-     * Visualizza un avviso di errore con un messaggio di fondi insufficienti.
+     * Visualizza un avviso di errore con un messaggio.
      */
     public static void display_ERROR_Alert(String s) {
         Alert a = new Alert(Alert.AlertType.ERROR);

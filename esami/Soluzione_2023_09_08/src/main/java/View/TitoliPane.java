@@ -17,16 +17,27 @@ import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 
+/**
+ * Questa classe rappresenta un pannello che mostra i titoli disponibili.
+ */
 public class TitoliPane extends HBox {
     private MainGUI mg;
 
+    /**
+     * Costruisce una nuova istanza di TitoliPane.
+     *
+     * @param mg L'istanza di MainGUI utilizzata per gestire il pannello.
+     */
     public TitoliPane(MainGUI mg) {
         super();
         this.mg = mg;
         aggiornaTitoliPane();
     }
 
-    public void aggiornaTitoliPane(){
+    /**
+     * Aggiorna il pannello dei titoli con i dati attuali.
+     */
+    public void aggiornaTitoliPane() {
         getChildren().clear();
         ArrayList<Titolo> titoli = mg.getTitoliDB().getArchivio();
         for (int i = MainGUI.getGeneralIndex(); i < MainGUI.getGeneralIndex() + 3; i++) {
@@ -34,7 +45,13 @@ public class TitoliPane extends HBox {
         }
     }
 
-    private StackPane creaRettangolo(Titolo t){
+    /**
+     * Crea un rettangolo per visualizzare un titolo.
+     *
+     * @param t Il titolo da visualizzare.
+     * @return Un StackPane contenente il rettangolo e il testo del titolo.
+     */
+    private StackPane creaRettangolo(Titolo t) {
         Rectangle r = new Rectangle(130, 40);
         r.setFill(getColore(t));
         String ultimeDueCifre = t.getAnno().substring(2);
@@ -44,17 +61,29 @@ public class TitoliPane extends HBox {
         return sp;
     }
 
+    /**
+     * Restituisce il colore associato al tipo di titolo.
+     *
+     * @param t Il titolo.
+     * @return Il colore associato al tipo di titolo.
+     */
     private Color getColore(Titolo t) {
-        if(t instanceof Anime)
+        if (t instanceof Anime)
             return Color.SALMON;
-        else if(t instanceof Film)
+        else if (t instanceof Film)
             return Color.CYAN;
-        else if(t instanceof Serie)
+        else if (t instanceof Serie)
             return Color.MAGENTA;
         return null;
     }
 
-    private void impostaTitoloAction(StackPane sp, Titolo t){
+    /**
+     * Imposta l'azione per un titolo quando viene cliccato.
+     *
+     * @param sp Lo StackPane che contiene il titolo.
+     * @param t Il titolo.
+     */
+    private void impostaTitoloAction(StackPane sp, Titolo t) {
         sp.setOnMouseClicked(mouseEvent -> {
             VBox centro = creaCentro(t);
             centro.setAlignment(Pos.CENTER);
@@ -62,12 +91,18 @@ public class TitoliPane extends HBox {
         });
     }
 
-    private VBox creaCentro(Titolo t){
+    /**
+     * Crea un pannello centrale per visualizzare i dettagli di un titolo.
+     *
+     * @param t Il titolo.
+     * @return Un VBox contenente i dettagli del titolo.
+     */
+    private VBox creaCentro(Titolo t) {
         VBox vb = new VBox();
         Text text = new Text(t.toString());
         vb.getChildren().add(text);
         Button b = new Button("Acquista " + t.getPrezzoScontato() + "€");
-        if(t instanceof Serie s){
+        if (t instanceof Serie s) {
             HBox hb = new HBox();
             for (int i = 0; i < s.getnStagioni(); i++) {
                 Button butt = new Button("S" + i);
@@ -83,6 +118,13 @@ public class TitoliPane extends HBox {
         return vb;
     }
 
+    /**
+     * Imposta l'azione per i bottoni delle stagioni di una serie.
+     *
+     * @param b Il bottone della stagione.
+     * @param bottoneAcquista Il bottone per acquistare.
+     * @param s La serie.
+     */
     private void setSerieButtonAction(Button b, Button bottoneAcquista, Serie s) {
         b.setOnAction(event -> {
             b.setDisable(true);

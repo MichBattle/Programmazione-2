@@ -9,6 +9,9 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 
+/**
+ * Questa classe gestisce l'interfaccia grafica principale dell'applicazione.
+ */
 public class MainGUI extends BorderPane {
     private static int GENERAL_INDEX;
     private TitoliDB titoliDB;
@@ -17,6 +20,9 @@ public class MainGUI extends BorderPane {
     private BottoniSorting bottoniSorting;
     private Button clear;
 
+    /**
+     * Costruisce una nuova istanza di MainGUI.
+     */
     public MainGUI() {
         super();
         GENERAL_INDEX = 0;
@@ -37,37 +43,65 @@ public class MainGUI extends BorderPane {
         super.setRight(bottoniSorting);
     }
 
+    /**
+     * Imposta l'azione per il bottone "Clear".
+     */
     private void setClearAction() {
         clear.setOnAction(event -> {
             GENERAL_INDEX = 0;
             titoliDB.sortByName();
             setCenter(null);
             titoliPane.aggiornaTitoliPane();
-            for (Titolo t : titoliDB.getArchivio())
+            for (Titolo t : titoliDB.getArchivio()) {
                 t.resetPrezzo();
+            }
         });
     }
 
+    /**
+     * Restituisce l'indice generale.
+     *
+     * @return L'indice generale.
+     */
     public static int getGeneralIndex() {
         return GENERAL_INDEX;
     }
 
+    /**
+     * Incrementa l'indice generale.
+     */
     public static void incrementGeneralIndex() {
         GENERAL_INDEX++;
     }
 
+    /**
+     * Decrementa l'indice generale.
+     */
     public static void decrementGeneralIndex() {
         GENERAL_INDEX--;
     }
 
+    /**
+     * Reimposta l'indice generale a 0.
+     */
     public static void resetGeneralIndex() {
         GENERAL_INDEX = 0;
     }
 
+    /**
+     * Restituisce il database dei titoli.
+     *
+     * @return Il database dei titoli.
+     */
     public TitoliDB getTitoliDB() {
         return titoliDB;
     }
 
+    /**
+     * Restituisce il pannello dei titoli.
+     *
+     * @return Il pannello dei titoli.
+     */
     public TitoliPane getTitoliPane() {
         return titoliPane;
     }
