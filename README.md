@@ -25,30 +25,6 @@ Folder Structure:
 │           ├── Controller
 │           ├── Model
 │           └── View
-├── StreamThis
-│   ├── .idea
-│   ├── .mvn
-│   │   └── wrapper
-│   ├── src
-│   │   └── main
-│   │       ├── java
-│   │       │   ├── Controller
-│   │       │   │   └── Titoli
-│   │       │   ├── Main
-│   │       │   └── View
-│   │       └── resources
-│   │           └── org
-│   │               └── example
-│   │                   └── streamthis
-│   └── target
-│       └── classes
-│           ├── Controller
-│           │   └── Titoli
-│           ├── Main
-│           ├── View
-│           └── org
-│               └── example
-│                   └── streamthis
 ├── esami
 │   ├── Soluzione_2018_06_15
 │   │   ├── .idea
@@ -367,7 +343,33 @@ Folder Structure:
 │   │       │       └── soluzione_2023_07_18
 │   │       └── generated-sources
 │   │           └── annotations
-│   └── Soluzione_2023_09_08
+│   ├── Soluzione_2023_09_08
+│   │   ├── .idea
+│   │   ├── .mvn
+│   │   │   └── wrapper
+│   │   ├── src
+│   │   │   └── main
+│   │   │       ├── java
+│   │   │       │   ├── Controller
+│   │   │       │   ├── Model
+│   │   │       │   │   └── Titoli
+│   │   │       │   ├── View
+│   │   │       │   └── com
+│   │   │       │       └── soluzione_2023_09_08
+│   │   │       └── resources
+│   │   │           └── com
+│   │   │               └── soluzione_2023_09_08
+│   │   └── target
+│   │       ├── classes
+│   │       │   ├── Controller
+│   │       │   ├── Model
+│   │       │   │   └── Titoli
+│   │       │   ├── View
+│   │       │   └── com
+│   │       │       └── soluzione_2023_09_08
+│   │       └── generated-sources
+│   │           └── annotations
+│   └── Soluzione_2024_02_16
 │       ├── .idea
 │       ├── .mvn
 │       │   └── wrapper
@@ -376,21 +378,20 @@ Folder Structure:
 │       │       ├── java
 │       │       │   ├── Controller
 │       │       │   ├── Model
-│       │       │   │   └── Titoli
+│       │       │   │   └── Medicine
 │       │       │   ├── View
 │       │       │   └── com
-│       │       │       └── soluzione_2023_09_08
+│       │       │       └── soluzione_2024_02_16
 │       │       └── resources
 │       │           └── com
-│       │               └── soluzione_2023_09_08
+│       │               └── soluzione_2024_02_16
 │       └── target
 │           ├── classes
 │           │   ├── Controller
 │           │   ├── Model
-│           │   │   └── Titoli
 │           │   ├── View
 │           │   └── com
-│           │       └── soluzione_2023_09_08
+│           │       └── soluzione_2024_02_16
 │           └── generated-sources
 │               └── annotations
 └── lab
