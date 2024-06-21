@@ -1,6 +1,6 @@
 # About
 
-This repository includes all the UniTn INF exams from 2018 to 2024 and a part of the Lab.
+This repository includes all the UniTn INF exams from 2018 to 2024 with JD and a part of the Lab.
 
 Folder Structure:
 ```
