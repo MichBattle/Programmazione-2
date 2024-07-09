@@ -22,7 +22,8 @@ Folder Structure:
 │   ├── Soluzione_2024_01_12_Run
 │   ├── Soluzione_2024_02_16_Farmacia
 │   ├── Soluzione_2024_06_17_Evocazioni
-│   └── Solutions.zip
+│   ├── Soluzione_2024_07_08_Quest
+│   └── Soluzioni.zip
 └── lab
     ├── lab_1
     ├── lab_2
